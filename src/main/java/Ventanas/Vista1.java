@@ -152,8 +152,6 @@ public class Vista1 extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OIPE (1).jpg"))); // NOI18N
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(

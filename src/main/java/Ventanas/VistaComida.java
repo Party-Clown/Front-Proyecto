@@ -51,12 +51,12 @@ public class VistaComida extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        chkCarneG = new javax.swing.JCheckBox();
+        chkpasabocas = new javax.swing.JCheckBox();
+        chkEnsalda = new javax.swing.JCheckBox();
+        chkCarnitas = new javax.swing.JCheckBox();
+        chkCarnes = new javax.swing.JCheckBox();
+        chkCarneV = new javax.swing.JCheckBox();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,7 +90,6 @@ public class VistaComida extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton5.setText("Decoraciones");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,20 +170,25 @@ public class VistaComida extends javax.swing.JFrame {
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/foto3.jpg"))); // NOI18N
 
-        jCheckBox1.setText("Carne grujiente");
+        chkCarneG.setText("Carne grujiente");
 
-        jCheckBox2.setText("Pasabocas");
+        chkpasabocas.setText("Pasabocas");
 
-        jCheckBox3.setText("Ensalda");
+        chkEnsalda.setText("Ensalda");
 
-        jCheckBox4.setText("Semi-Asada");
+        chkCarnitas.setText("Semi-Asada");
 
-        jCheckBox5.setText("Carnitas");
+        chkCarnes.setText("Carnitas");
 
-        jCheckBox6.setText("Carne y vegetales");
+        chkCarneV.setText("Carne y vegetales");
 
         jButton4.setBackground(new java.awt.Color(255, 204, 204));
         jButton4.setText("Agregar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -219,7 +223,7 @@ public class VistaComida extends javax.swing.JFrame {
                                         .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGap(105, 105, 105)
-                                            .addComponent(jCheckBox2))))
+                                            .addComponent(chkpasabocas))))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
@@ -230,21 +234,16 @@ public class VistaComida extends javax.swing.JFrame {
                                                 .addComponent(jLabel25))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(73, 73, 73)
-                                        .addComponent(jCheckBox6)))))
+                                        .addComponent(chkCarneV)))))
                         .addGap(0, 18, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jCheckBox4)
+                                .addComponent(chkCarnitas)
                                 .addGap(82, 82, 82)
-                                .addComponent(jCheckBox5)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(68, 68, 68)
-                                        .addComponent(jCheckBox3))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox1)))
+                                .addComponent(chkCarnes)
+                                .addGap(68, 68, 68)
+                                .addComponent(chkEnsalda)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
@@ -254,9 +253,15 @@ public class VistaComida extends javax.swing.JFrame {
                         .addComponent(jLabel8))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
-                        .addGap(43, 43, 43)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton4)
+                                .addGap(43, 43, 43))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(chkCarneG)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -270,21 +275,21 @@ public class VistaComida extends javax.swing.JFrame {
                     .addComponent(jLabel22))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox3))
+                    .addComponent(chkCarnitas)
+                    .addComponent(chkCarnes)
+                    .addComponent(chkEnsalda))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox6))
+                    .addComponent(chkpasabocas)
+                    .addComponent(chkCarneV))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
+                        .addComponent(chkCarneG)
                         .addGap(53, 53, 53)
                         .addComponent(jButton4))
                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -361,12 +366,100 @@ public class VistaComida extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if (chkCarnitas.isSelected()) {
+    String nombrePlato = chkCarnitas.getText();
+    String rutaImagen = "src/main/resources/imagenes/semi-asada.jpeg";
+    String textoDescripcion ="Carne ligeramente asada, jugosa y con un toque ahumado.\n";
+           
+
+    String valorPlato = "$30000";
+
+    VentanaSemiAs ventana = new VentanaSemiAs();
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(valorPlato);
+    ventana.setVisible(true);
+    dispose();
+}else if(chkCarnes.isSelected()){
+    String nombrePlato = chkCarnes.getText();
+    String rutaImagen = "src/main/resources/imagenes/carnitas.jpeg";
+    String textoDescripcion = "Trozos de cerdo cocinados lentamente hasta quedar crujientes por fuera y suaves por dentro.";
+    String valorPlato = "$25000";
+
+    VentanaSemiAs ventana = new VentanaSemiAs();
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(valorPlato);
+    ventana.setVisible(true);
+    
+}else if(chkEnsalda.isSelected()){
+    String nombrePlato = chkEnsalda.getText();
+    String rutaImagen = "src/main/resources/imagenes/ensalda.jpeg";
+    String textoDescripcion = "Una mezcla fresca de hojas verdes, aguacate y vegetales crocantes.";
+    String valorPlato = "$28000";
+
+    VentanaSemiAs ventana = new VentanaSemiAs();
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(valorPlato);
+    ventana.setVisible(true);
+}else if(chkpasabocas.isSelected()){
+        String nombrePlato = chkpasabocas.getText();
+    String rutaImagen = "src/main/resources/imagenes/foto1.jpg";
+    String textoDescripcion = "Pequeñas delicias para picar: bocados gourmet que combinan texturas y sabores en presentaciones elegantes.";
+    String valorPlato = "$20000";
+
+    VentanaSemiAs ventana = new VentanaSemiAs();
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(valorPlato);
+    ventana.setVisible(true);
+    }else if(chkCarneV.isSelected()){
+        String nombrePlato = chkCarneV.getText();
+    String rutaImagen = "src/main/resources/imagenes/Carneva.jpg";
+    String textoDescripcion = "Un plato balanceado con proteína y vegetales salteados la carne está dorada al punto justo.";
+    String valorPlato = "$25000";
+
+    VentanaSemiAs ventana = new VentanaSemiAs();
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(valorPlato);
+    ventana.setVisible(true);
+    }else if(chkCarneG.isSelected()){
+     String nombrePlato = chkCarneG.getText();
+    String rutaImagen = "src/main/resources/imagenes/foto3.jpg";
+    String textoDescripcion = "Corte de carne con costra dorada y crujiente, sazonada con especias y decorada con hierbas.";
+    String valorPlato = "$25000";
+
+    VentanaSemiAs ventana = new VentanaSemiAs();
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(valorPlato);
+    ventana.setVisible(true);
+        
+    }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox chkCarneG;
+    private javax.swing.JCheckBox chkCarneV;
+    private javax.swing.JCheckBox chkCarnes;
+    private javax.swing.JCheckBox chkCarnitas;
+    private javax.swing.JCheckBox chkEnsalda;
+    private javax.swing.JCheckBox chkpasabocas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -374,12 +467,6 @@ public class VistaComida extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
