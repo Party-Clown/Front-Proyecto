@@ -177,9 +177,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton10">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/cuadro.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Decoraciones"/>
               </Properties>
               <Events>
@@ -401,9 +398,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton16">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/cuadro.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Decoraciones"/>
               </Properties>
               <Events>
@@ -665,9 +659,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton22">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/cuadro.png"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Decoraciones"/>
                   </Properties>
                   <Events>
@@ -873,9 +864,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton28">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/cuadro.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Decoraciones"/>
                       </Properties>
                       <Events>
@@ -1097,9 +1085,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton34">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/cuadro.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Decoraciones"/>
                       </Properties>
                       <Events>
@@ -1305,9 +1290,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton40">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/cuadro.png"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Decoraciones"/>
                           </Properties>
                           <Events>
@@ -1545,9 +1527,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton46">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/cuadro.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Decoraciones"/>
                       </Properties>
                       <Events>
@@ -1753,9 +1732,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton52">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/cuadro.png"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Decoraciones"/>
                           </Properties>
                           <Events>
@@ -1977,9 +1953,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton58">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/cuadro.png"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Decoraciones"/>
                           </Properties>
                           <Events>
@@ -2185,9 +2158,6 @@
                             </Component>
                             <Component class="javax.swing.JButton" name="jButton64">
                               <Properties>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/cuadro.png"/>
-                                </Property>
                                 <Property name="text" type="java.lang.String" value="Decoraciones"/>
                               </Properties>
                               <Events>
@@ -2441,9 +2411,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton70">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/cuadro.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Decoraciones"/>
                       </Properties>
                       <Events>
@@ -2649,9 +2616,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton76">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/cuadro.png"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Decoraciones"/>
                           </Properties>
                           <Events>
@@ -2873,9 +2837,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton82">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/cuadro.png"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Decoraciones"/>
                           </Properties>
                           <Events>
@@ -3081,9 +3042,6 @@
                             </Component>
                             <Component class="javax.swing.JButton" name="jButton88">
                               <Properties>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/cuadro.png"/>
-                                </Property>
                                 <Property name="text" type="java.lang.String" value="Decoraciones"/>
                               </Properties>
                               <Events>
@@ -3321,9 +3279,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton94">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/cuadro.png"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Decoraciones"/>
                           </Properties>
                           <Events>
@@ -3529,9 +3484,6 @@
                             </Component>
                             <Component class="javax.swing.JButton" name="jButton100">
                               <Properties>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/cuadro.png"/>
-                                </Property>
                                 <Property name="text" type="java.lang.String" value="Decoraciones"/>
                               </Properties>
                               <Events>
@@ -3753,9 +3705,6 @@
                             </Component>
                             <Component class="javax.swing.JButton" name="jButton106">
                               <Properties>
-                                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/cuadro.png"/>
-                                </Property>
                                 <Property name="text" type="java.lang.String" value="Decoraciones"/>
                               </Properties>
                               <Events>
@@ -3961,9 +3910,6 @@
                                 </Component>
                                 <Component class="javax.swing.JButton" name="jButton112">
                                   <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/cuadro.png"/>
-                                    </Property>
                                     <Property name="text" type="java.lang.String" value="Decoraciones"/>
                                   </Properties>
                                   <Events>
@@ -4186,9 +4132,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton5">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/cuadro.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Decoraciones"/>
       </Properties>
       <Events>
@@ -4397,9 +4340,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton118">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/cuadro.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Decoraciones"/>
               </Properties>
               <Events>
@@ -4588,9 +4528,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton124">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/cuadro.png"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Decoraciones"/>
                   </Properties>
                   <Events>
@@ -4794,9 +4731,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton130">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/cuadro.png"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Decoraciones"/>
                   </Properties>
                   <Events>
@@ -5002,9 +4936,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton136">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/cuadro.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Decoraciones"/>
                       </Properties>
                       <Events>
@@ -5242,9 +5173,6 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton142">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/cuadro.png"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Decoraciones"/>
                   </Properties>
                   <Events>
@@ -5450,9 +5378,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton148">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/cuadro.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Decoraciones"/>
                       </Properties>
                       <Events>
@@ -5674,9 +5599,6 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton154">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/cuadro.png"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Decoraciones"/>
                       </Properties>
                       <Events>
@@ -5882,9 +5804,6 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton160">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/cuadro.png"/>
-                            </Property>
                             <Property name="text" type="java.lang.String" value="Decoraciones"/>
                           </Properties>
                           <Events>

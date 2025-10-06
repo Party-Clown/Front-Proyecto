@@ -391,7 +391,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton10.setText("Decoraciones");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -525,7 +524,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton16.setText("Decoraciones");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -633,7 +631,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton22.setText("Decoraciones");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -741,7 +738,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton28.setText("Decoraciones");
         jButton28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -875,7 +871,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton34.setText("Decoraciones");
         jButton34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -983,7 +978,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton40.setText("Decoraciones");
         jButton40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1153,7 +1147,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton46.setText("Decoraciones");
         jButton46.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1261,7 +1254,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton52.setText("Decoraciones");
         jButton52.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1395,7 +1387,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton58.setText("Decoraciones");
         jButton58.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1503,7 +1494,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton64.setText("Decoraciones");
         jButton64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1719,7 +1709,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton70.setText("Decoraciones");
         jButton70.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1827,7 +1816,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton76.setText("Decoraciones");
         jButton76.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1961,7 +1949,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton82.setText("Decoraciones");
         jButton82.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2069,7 +2056,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton88.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton88.setText("Decoraciones");
         jButton88.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2239,7 +2225,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton94.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton94.setText("Decoraciones");
         jButton94.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2347,7 +2332,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton100.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton100.setText("Decoraciones");
         jButton100.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2481,7 +2465,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton106.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton106.setText("Decoraciones");
         jButton106.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2589,7 +2572,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton112.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton112.setText("Decoraciones");
         jButton112.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2972,7 +2954,6 @@ public class VistasCarrito extends javax.swing.JFrame {
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alcohol.png"))); // NOI18N
         jButton3.setText("Bebidas");
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton5.setText("Decoraciones");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3014,7 +2995,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton118.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton118.setText("Decoraciones");
         jButton118.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3122,7 +3102,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton124.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton124.setText("Decoraciones");
         jButton124.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3237,7 +3216,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton130.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton130.setText("Decoraciones");
         jButton130.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3345,7 +3323,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton136.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton136.setText("Decoraciones");
         jButton136.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3515,7 +3492,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton142.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton142.setText("Decoraciones");
         jButton142.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3623,7 +3599,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton148.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton148.setText("Decoraciones");
         jButton148.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3757,7 +3732,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton154.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton154.setText("Decoraciones");
         jButton154.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3865,7 +3839,6 @@ public class VistasCarrito extends javax.swing.JFrame {
             }
         });
 
-        jButton160.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton160.setText("Decoraciones");
         jButton160.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4604,86 +4577,6 @@ public class VistasCarrito extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton113ActionPerformed
 
-    private void jButton115ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton115ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton115ActionPerformed
-
-    private void jButton116ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton116ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton116ActionPerformed
-
-    private void jButton117ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton117ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton117ActionPerformed
-
-    private void jButton118ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton118ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton118ActionPerformed
-
-    private void jButton119ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton119ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton119ActionPerformed
-
-    private void jButton121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton121ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton121ActionPerformed
-
-    private void jButton122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton122ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton122ActionPerformed
-
-    private void jButton123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton123ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton123ActionPerformed
-
-    private void jButton124ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton124ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton124ActionPerformed
-
-    private void jButton125ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton125ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton125ActionPerformed
-
-    private void jButton127ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton127ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton127ActionPerformed
-
-    private void jButton128ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton128ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton128ActionPerformed
-
-    private void jButton129ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton129ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton129ActionPerformed
-
-    private void jButton130ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton130ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton130ActionPerformed
-
-    private void jButton131ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton131ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton131ActionPerformed
-
-    private void jButton133ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton133ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton133ActionPerformed
-
-    private void jButton134ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton134ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton134ActionPerformed
-
-    private void jButton135ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton135ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton135ActionPerformed
-
-    private void jButton136ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton136ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton136ActionPerformed
-
-    private void jButton137ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton137ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton137ActionPerformed
-
     private void jButton139ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton139ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton139ActionPerformed
@@ -4764,40 +4657,90 @@ public class VistasCarrito extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton161ActionPerformed
 
+    private void jButton119ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton119ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton119ActionPerformed
+
+    private void jButton118ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton118ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton118ActionPerformed
+
+    private void jButton117ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton117ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton117ActionPerformed
+
+    private void jButton116ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton116ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton116ActionPerformed
+
+    private void jButton115ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton115ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton115ActionPerformed
+
+    private void jButton125ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton125ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton125ActionPerformed
+
+    private void jButton124ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton124ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton124ActionPerformed
+
+    private void jButton123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton123ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton123ActionPerformed
+
+    private void jButton122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton122ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton122ActionPerformed
+
+    private void jButton121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton121ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton121ActionPerformed
+
+    private void jButton131ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton131ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton131ActionPerformed
+
+    private void jButton130ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton130ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton130ActionPerformed
+
+    private void jButton129ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton129ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton129ActionPerformed
+
+    private void jButton128ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton128ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton128ActionPerformed
+
+    private void jButton127ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton127ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton127ActionPerformed
+
+    private void jButton137ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton137ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton137ActionPerformed
+
+    private void jButton136ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton136ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton136ActionPerformed
+
+    private void jButton135ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton135ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton135ActionPerformed
+
+    private void jButton134ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton134ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton134ActionPerformed
+
+    private void jButton133ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton133ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton133ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistasCarrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistasCarrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistasCarrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistasCarrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistasCarrito().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
