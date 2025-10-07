@@ -4,17 +4,25 @@
  */
 package Ventanas;
 
+import APIS.HistorialPedidos;
+import APIS.ItemsPedidos;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author qospi
  */
 public class VistaComida extends javax.swing.JFrame {
-
+ private Carrito carritoS;
+ private List<ItemsPedidos> carrito=new ArrayList<>();
+ private HistorialPedidos historial=new HistorialPedidos();
     /**
      * Creates new form vistaComida
      */
     public VistaComida() {
         initComponents();
+       carritoS=new Carrito(carrito,historial);
     }
 
     /**
@@ -57,7 +65,7 @@ public class VistaComida extends javax.swing.JFrame {
         chkCarnitas = new javax.swing.JCheckBox();
         chkCarnes = new javax.swing.JCheckBox();
         chkCarneV = new javax.swing.JCheckBox();
-        jButton4 = new javax.swing.JButton();
+        BtnAgregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -182,11 +190,11 @@ public class VistaComida extends javax.swing.JFrame {
 
         chkCarneV.setText("Carne y vegetales");
 
-        jButton4.setBackground(new java.awt.Color(255, 204, 204));
-        jButton4.setText("Agregar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        BtnAgregar.setBackground(new java.awt.Color(255, 204, 204));
+        BtnAgregar.setText("Agregar");
+        BtnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                BtnAgregarActionPerformed(evt);
             }
         });
 
@@ -256,7 +264,7 @@ public class VistaComida extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4)
+                                .addComponent(BtnAgregar)
                                 .addGap(43, 43, 43))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -291,7 +299,7 @@ public class VistaComida extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(chkCarneG)
                         .addGap(53, 53, 53)
-                        .addComponent(jButton4))
+                        .addComponent(BtnAgregar))
                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,87 +374,134 @@ public class VistaComida extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
         // TODO add your handling code here:
         if (chkCarnitas.isSelected()) {
     String nombrePlato = chkCarnitas.getText();
     String rutaImagen = "src/main/resources/imagenes/semi-asada.jpeg";
     String textoDescripcion ="Carne ligeramente asada, jugosa y con un toque ahumado.\n";
-           
+    double precio = 30000.0;
+    String categoria ="comida" ;
+        ItemsPedidos item = new ItemsPedidos(categoria, nombrePlato, 1, precio);
 
-    String valorPlato = "$30000";
+        // Enviar a la ventana de detalle o directamente al carrito
+       carritoS.agregarItems(item);
 
-    VentanaSemiAs ventana = new VentanaSemiAs();
+        javax.swing.JOptionPane.showMessageDialog(this, nombrePlato + " agregado al carrito.");
+    
+    
+    VentanaSemiAs ventana = new VentanaSemiAs(this.carrito,this.historial);
     ventana.setNombrePlato(nombrePlato);
     ventana.setImagenPlato(rutaImagen);
     ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(valorPlato);
+    ventana.setValorPlato(precio);
     ventana.setVisible(true);
     dispose();
 }else if(chkCarnes.isSelected()){
     String nombrePlato = chkCarnes.getText();
     String rutaImagen = "src/main/resources/imagenes/carnitas.jpeg";
     String textoDescripcion = "Trozos de cerdo cocinados lentamente hasta quedar crujientes por fuera y suaves por dentro.";
-    String valorPlato = "$25000";
+    double precio = 25000.0;
+     String categoria ="comida" ;
+     
+     ItemsPedidos item = new ItemsPedidos(categoria, nombrePlato, 1, precio);
 
-    VentanaSemiAs ventana = new VentanaSemiAs();
+        // Enviar a la ventana de detalle o directamente al carrito
+       carritoS.agregarItems(item);
+
+        javax.swing.JOptionPane.showMessageDialog(this, nombrePlato + " agregado al carrito.");
+
+      VentanaSemiAs ventana = new VentanaSemiAs(this.carrito,this.historial);
     ventana.setNombrePlato(nombrePlato);
     ventana.setImagenPlato(rutaImagen);
     ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(valorPlato);
+    ventana.setValorPlato(precio);
     ventana.setVisible(true);
     
 }else if(chkEnsalda.isSelected()){
     String nombrePlato = chkEnsalda.getText();
     String rutaImagen = "src/main/resources/imagenes/ensalda.jpeg";
     String textoDescripcion = "Una mezcla fresca de hojas verdes, aguacate y vegetales crocantes.";
-    String valorPlato = "$28000";
+    double precio = 28000.0;
+     String categoria ="comida" ;
+     
+     ItemsPedidos item = new ItemsPedidos(categoria, nombrePlato, 1, precio);
 
-    VentanaSemiAs ventana = new VentanaSemiAs();
+        // Enviar a la ventana de detalle o directamente al carrito
+       carritoS.agregarItems(item);
+
+        javax.swing.JOptionPane.showMessageDialog(this, nombrePlato + " agregado al carrito.");
+
+       VentanaSemiAs ventana = new VentanaSemiAs(this.carrito,this.historial);
     ventana.setNombrePlato(nombrePlato);
     ventana.setImagenPlato(rutaImagen);
     ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(valorPlato);
+    ventana.setValorPlato(precio);
     ventana.setVisible(true);
+    
 }else if(chkpasabocas.isSelected()){
         String nombrePlato = chkpasabocas.getText();
     String rutaImagen = "src/main/resources/imagenes/foto1.jpg";
     String textoDescripcion = "Pequeñas delicias para picar: bocados gourmet que combinan texturas y sabores en presentaciones elegantes.";
-    String valorPlato = "$20000";
+    double precio = 20000.0;
+     String categoria ="comida" ;
+     
+     ItemsPedidos item = new ItemsPedidos(categoria, nombrePlato, 1, precio);
 
-    VentanaSemiAs ventana = new VentanaSemiAs();
+        // Enviar a la ventana de detalle o directamente al carrito
+       carritoS.agregarItems(item);
+
+        javax.swing.JOptionPane.showMessageDialog(this, nombrePlato + " agregado al carrito.");
+
+       VentanaSemiAs ventana = new VentanaSemiAs(this.carrito,this.historial);
     ventana.setNombrePlato(nombrePlato);
     ventana.setImagenPlato(rutaImagen);
     ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(valorPlato);
+    ventana.setValorPlato(precio);
     ventana.setVisible(true);
     }else if(chkCarneV.isSelected()){
         String nombrePlato = chkCarneV.getText();
     String rutaImagen = "src/main/resources/imagenes/Carneva.jpg";
     String textoDescripcion = "Un plato balanceado con proteína y vegetales salteados la carne está dorada al punto justo.";
-    String valorPlato = "$25000";
+    double precio = 25000.0;
+     String categoria ="comida" ;
+     
+     ItemsPedidos item = new ItemsPedidos(categoria, nombrePlato, 1, precio);
 
-    VentanaSemiAs ventana = new VentanaSemiAs();
+        // Enviar a la ventana de detalle o directamente al carrito
+       carritoS.agregarItems(item);
+
+        javax.swing.JOptionPane.showMessageDialog(this, nombrePlato + " agregado al carrito.");
+
+       VentanaSemiAs ventana = new VentanaSemiAs(this.carrito,this.historial);
     ventana.setNombrePlato(nombrePlato);
     ventana.setImagenPlato(rutaImagen);
     ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(valorPlato);
+    ventana.setValorPlato(precio);
     ventana.setVisible(true);
     }else if(chkCarneG.isSelected()){
      String nombrePlato = chkCarneG.getText();
     String rutaImagen = "src/main/resources/imagenes/foto3.jpg";
     String textoDescripcion = "Corte de carne con costra dorada y crujiente, sazonada con especias y decorada con hierbas.";
-    String valorPlato = "$25000";
+    double precio = 25000.0;
+     String categoria ="comida" ;
+     
+     ItemsPedidos item = new ItemsPedidos(categoria, nombrePlato, 1, precio);
 
-    VentanaSemiAs ventana = new VentanaSemiAs();
+        // Enviar a la ventana de detalle o directamente al carrito
+       carritoS.agregarItems(item);
+
+        javax.swing.JOptionPane.showMessageDialog(this, nombrePlato + " agregado al carrito.");
+
+       VentanaSemiAs ventana = new VentanaSemiAs(this.carrito,this.historial);
     ventana.setNombrePlato(nombrePlato);
     ventana.setImagenPlato(rutaImagen);
     ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(valorPlato);
+    ventana.setValorPlato(precio);
     ventana.setVisible(true);
         
     }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_BtnAgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -454,6 +509,7 @@ public class VistaComida extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAgregar;
     private javax.swing.JCheckBox chkCarneG;
     private javax.swing.JCheckBox chkCarneV;
     private javax.swing.JCheckBox chkCarnes;
@@ -463,7 +519,6 @@ public class VistaComida extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;

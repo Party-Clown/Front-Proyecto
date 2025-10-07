@@ -4,6 +4,11 @@
  */
 package Ventanas;
 
+import APIS.HistorialPedidos;
+import APIS.ItemsPedidos;
+import APIS.Pedido;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 
 /**
@@ -21,14 +26,34 @@ public void setNombrePlato(String nombre) {
  public void setTextoDescripcion(String descripcion) {
     lblTextoDescripcion.setText(descripcion);
 }
-public void setValorPlato(String valor) {
-    lblTextoValor.setText(valor);
+    public void setValorPlato(double precio) {
+    lblTextoValor.setText(String.valueOf(precio));
 }
-    /**
+    private List<ItemsPedidos> carrito;
+    private HistorialPedidos historial;
+    
+
+/**
      * Creates new form VentanaSemiAs
      */
-    public VentanaSemiAs() {
+    public VentanaSemiAs(List<ItemsPedidos> carritoExistente,HistorialPedidos historialExistente){
+        
         initComponents();
+        if(carritoExistente !=null){
+            this.carrito=carritoExistente;
+        }else{
+            this.carrito=new ArrayList<>();
+        }
+        if(historialExistente!=null){
+            this.historial=historialExistente;
+        }else{
+            this.historial=new HistorialPedidos();
+        }
+    }
+    
+    public VentanaSemiAs(){
+        initComponents();
+        this.carrito=new ArrayList<>();
     }
 
     /**
@@ -157,15 +182,19 @@ public void setValorPlato(String valor) {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      String nombrePlato=lblDescripcion.getText();
-      String valorPlato=lblTextoValor.getText();
+      String nombre=lblDescripcion.getText();
+      double precioUnitario=Double.parseDouble(lblTextoValor.getText());
       int cantidad= (int)SpinnerCantidad2.getValue();
 
-        Carrito car = new Carrito();
-        car.setNombrePlato(nombrePlato);
-        car.setValorPlato(valorPlato,cantidad);
-        car.setVisible(true);
-        dispose();
+        String categoria="comida";
+        ItemsPedidos item=new ItemsPedidos(categoria, nombre, cantidad, precioUnitario);
+        
+        if(carrito==null)carrito=new ArrayList<>();
+        carrito.add(item);
+        
+        Carrito VC=new Carrito(carrito,historial);
+        VC.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
