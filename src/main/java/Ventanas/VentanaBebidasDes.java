@@ -4,6 +4,10 @@
  */
 package Ventanas;
 
+import APIS.HistorialPedidos;
+import APIS.ItemsPedidos;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 
 /**
@@ -21,17 +25,32 @@ public class VentanaBebidasDes extends javax.swing.JFrame {
  public void setTextoDescripcion(String descripcion) {
     lblTextoDescripcion.setText(descripcion);
 }
-public void setValorPlato(String valor) {
-    lblTextoValor.setText(valor);
+public void setValorPlato(double precio) {
+    lblTextoValor.setText(String.valueOf(precio));
+    
 }
-
+private List<ItemsPedidos> carrito;
+private HistorialPedidos historial;
     /**
      * Creates new form VentanaBebidasDes
      */
-    public VentanaBebidasDes() {
+    public VentanaBebidasDes(List<ItemsPedidos> carritoExistente, HistorialPedidos historialexistente) {
         initComponents();
+        if(carritoExistente!= null){
+            this.carrito=carritoExistente;
+        }else{
+            this.carrito=new ArrayList<>();
+        }
+        if(historialexistente!=null){
+            this.historial=historialexistente;
+        }else{
+            this.historial=new HistorialPedidos();
+        }
     }
-
+        public VentanaBebidasDes(){
+            initComponents();
+            this.carrito=new ArrayList<>();
+        }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -156,13 +175,16 @@ public void setValorPlato(String valor) {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      String nombrePlato=lblDescripcion.getText();
-      String valorPlato=lblTextoValor.getText();
+      String nombre=lblDescripcion.getText();
+      double precioUnitario=Double.parseDouble(lblTextoValor.getText());
       int cantidad= (int)SpinnerCantidad.getValue();
-
-     Carrito car = new Carrito();
-        car.setNombrePlato(nombrePlato);
-        car.setValorPlato(valorPlato,cantidad);
+      String categoria="Bebida";
+              
+              ItemsPedidos item=new ItemsPedidos(categoria, nombre, cantidad, precioUnitario);
+              if(carrito==null)carrito=new ArrayList<>();
+              carrito.add(item);
+       Carrito car = new Carrito(carrito,historial);
+       
         car.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
