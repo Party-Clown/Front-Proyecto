@@ -5,6 +5,7 @@
 package APIS;
 
 import java.util.List;
+import java.util.Map;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -19,25 +20,28 @@ import retrofit2.http.Query;
  * @author Laura
  */
 public interface UsuarioApiService {
-   @GET("/api/usuarios")
+   @GET("/api/usuario")
    Call<List<Usuario>> getAllUsuarios();
    
-   @GET("/api/usuarios/{id}")
+   @GET("/api/usuario/{id}")
    Call<Usuario> getUsuarioByEmail(@Path("id")int id);
 
-   @POST("/api/usuarios")
+   @POST("/api/usuario")
    Call<Usuario> createUsuario(@Body Usuario usuario);
    
-   @PUT("/api/usuarios/{id}")
+   @PUT("/api/usuario/{id}")
     Call<Usuario> updateUsuario(@Path("id")int id, @Body Usuario usuario);       
 
-   @GET("api/usuarios/buscar")
+   @GET("api/usuario/buscar")
    Call<List<Usuario>> buscarUsuarios(
          @Query("nombre")String nombre,
          @Query("id")Integer id
           );
    
-   @DELETE("api/usuarios/{id}")
+   @DELETE("api/usuario/{id}")
    Call<Void> deleteUsuario(@Path("id")int id);
 
+   @POST("/api/usuario/login")
+    Call<Map<String, Object>> login(@Body Map<String, String> credenciales);
+   
 }

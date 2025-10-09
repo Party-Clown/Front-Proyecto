@@ -221,7 +221,7 @@ public class Vista2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        try{
+      try{
             String nombre=txtnombre.getText();
             String correoElectronico=txtcorreoElectronico.getText();
             String contrasena=txtcontrasena.getText();
@@ -236,18 +236,12 @@ public class Vista2 extends javax.swing.JFrame {
         }catch(IOException e){
             JOptionPane.showMessageDialog(this,e.getMessage(),"error",JOptionPane.ERROR_MESSAGE);
         }
-        GestionUsuarios vu=new GestionUsuarios();
-        vu.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                try {
-            Vista1 v1 = new Vista1();
-            v1.setVisible(true);
-            dispose();
-        } catch (Exception e) {
-             JOptionPane.showMessageDialog(this, "Error al volver a VistaSitios.", "Error de Navegación", JOptionPane.ERROR_MESSAGE);
-        }
+        Vista3 Vs3=new Vista3();
+        Vs3.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

@@ -13,16 +13,26 @@ public class Usuario {
     private String contrasena;
     private String nombre;
     private int id;
+    private String rol;
     
     public Usuario(){
         
     }
 
-    public Usuario(String correoElectronico, String contrasena, String nombre, int id) {
+    public Usuario(String correoElectronico, String contrasena, String nombre, int id,String rol) {
         this.correoElectronico = correoElectronico;
         this.contrasena = contrasena;
         this.nombre = nombre;
         this.id = id;
+        this.rol=rol;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
     
 
