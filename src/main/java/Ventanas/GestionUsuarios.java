@@ -211,7 +211,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
         
-        int fila = tblUsuarios.getSelectedRow();
+         int fila = tblUsuarios.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(this,"fila no seleccionada");
         }
@@ -222,7 +222,8 @@ public class GestionUsuarios extends javax.swing.JFrame {
         String contrasena=(String) tblUsuarios.getValueAt(fila, 3);
         String nombre=(String) tblUsuarios.getValueAt(fila, 1);
         int id = (int) tblUsuarios.getValueAt(fila, 0);
-        Usuario usuario=new Usuario(correoElectronico, contrasena, nombre, id);
+        String rol=(String) tblUsuarios.getValueAt(fila,4);
+        Usuario usuario=new Usuario(correoElectronico, contrasena, nombre, id, rol);
        
 
   

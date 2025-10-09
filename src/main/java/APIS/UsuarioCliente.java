@@ -5,7 +5,9 @@
 package APIS;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -26,7 +28,21 @@ public class UsuarioCliente {
 
         this.apiService = retrofit.create(UsuarioApiService.class);
 }
-    
+    public Map<String, Object> login(String email, String password) throws IOException {
+        Map<String, String> credenciales = new HashMap<>();
+        credenciales.put("email", email);
+        credenciales.put("password", password);
+
+        Response<Map<String, Object>> response = apiService.login(credenciales).execute();
+
+        if (response.isSuccessful() && response.body() != null) {
+            return response.body(); // contiene role, message, etc.
+        } else {
+            Map<String, Object> error = new HashMap<>();
+            error.put("error", "Credenciales inválidas o servidor no disponible");
+            return error;
+        }
+    }
     public List<Usuario> listarTodosUsuarios()throws IOException {
         
             Response<List<Usuario>> response = apiService.getAllUsuarios().execute();

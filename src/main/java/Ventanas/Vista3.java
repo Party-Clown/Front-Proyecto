@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Ventanas;
+import APIS.UsuarioApiService;
+import APIS.UsuarioCliente;
+import java.io.IOException;
+import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
@@ -10,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author Laura
  */
 public class Vista3 extends javax.swing.JFrame {
-
+ private UsuarioApiService apiService;
     /**
      * Creates new form Vista3
      */
@@ -53,11 +57,11 @@ public class Vista3 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        txtcorreo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txtcontrasena = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,6 +122,12 @@ public class Vista3 extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(jLabel2)
                 .addContainerGap(66, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addContainerGap()
@@ -125,29 +135,25 @@ public class Vista3 extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addComponent(jLabel3))
                     .addGap(18, 18, 18)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton1)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(22, Short.MAX_VALUE)))
+                    .addComponent(jButton1)
+                    .addContainerGap(79, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addGap(0, 186, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(63, 63, 63)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(33, 33, 33)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel5)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(34, 34, 34)
+                    .addGap(66, 66, 66)
+                    .addComponent(jLabel3)
+                    .addGap(36, 36, 36)
+                    .addComponent(jLabel5)
+                    .addGap(40, 40, 40)
                     .addComponent(jButton1)
                     .addContainerGap(21, Short.MAX_VALUE)))
         );
@@ -193,9 +199,35 @@ public class Vista3 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Vista4 vet4=new Vista4();
-        vet4.setVisible(true);
-        this.dispose();
+       UsuarioCliente cliente = new UsuarioCliente();
+        
+try {
+    Map<String, Object> resultado = cliente.login(txtcorreo.getText(), txtcontrasena.getText());
+
+    if (resultado.containsKey("role")) {
+        String rol = (String) resultado.get("role");
+
+        if ("ADMIN".equalsIgnoreCase(rol)) {
+            System.out.println("Login exitoso: Administrador");
+           
+            new VeantanaGestion().setVisible(true);
+            dispose();
+        } else {
+            
+            System.out.println("Login exitoso: administrador");
+            
+            new Vista4().setVisible(true);
+            dispose();
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
+    }
+
+} catch (IOException e) {
+    JOptionPane.showMessageDialog(null, "Error al conectar con el servidor: " + e.getMessage());
+}
+        
+                                   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -221,7 +253,7 @@ public class Vista3 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtcontrasena;
+    private javax.swing.JTextField txtcorreo;
     // End of variables declaration//GEN-END:variables
 }

@@ -253,12 +253,7 @@ public class Carrito extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       if (items.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "El carrito está vacío.");
-        return;
-    }
-
-    try {
+       try {
         // 1️⃣ Crear un nuevo pedido
         Pedido pedido = new Pedido();
       
@@ -280,7 +275,6 @@ public class Carrito extends javax.swing.JFrame {
     } catch (IOException e) {
         JOptionPane.showMessageDialog(this, "⚠ Error de conexión: " + e.getMessage());
     }
-
                                       
     }//GEN-LAST:event_jButton1ActionPerformed
 
