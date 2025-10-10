@@ -8,6 +8,7 @@ import APIS.Usuario;
 import APIS.UsuarioCliente;
 import java.io.IOException;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -15,17 +16,103 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Laura
  */
-public class GestionUsuarios extends javax.swing.JFrame {
-     private UsuarioCliente cliente;
-    /**
-     * Creates new form GestionUsuarios
-     */
-    public GestionUsuarios() {
+    public class GestionUsuarios extends javax.swing.JFrame {
+         private UsuarioCliente cliente;
+        /**
+         * Creates new form GestionUsuarios
+         */
+        public GestionUsuarios() {
         initComponents();
-        this.cliente=new UsuarioCliente();
+        this.cliente = new UsuarioCliente();
         cargarUsuarios();
-    }   
-    
+
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setResizable(true);
+        setLocationRelativeTo(null);
+
+        getContentPane().setLayout(new java.awt.BorderLayout());
+        jPanel1.setLayout(new java.awt.BorderLayout());
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(600, 0));
+        jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        javax.swing.JPanel panelBotones = new javax.swing.JPanel(new java.awt.GridBagLayout());
+        panelBotones.setOpaque(false);
+
+        java.awt.GridBagConstraints gbc = new java.awt.GridBagConstraints();
+        gbc.insets = new java.awt.Insets(10, 10, 10, 10);
+        gbc.gridy = 0;
+
+        if (txtID == null) {
+            txtID = new javax.swing.JTextField();
+        }
+        txtID.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
+        txtID.setPreferredSize(new java.awt.Dimension(300, 40));
+        gbc.gridx = 0;
+        gbc.weightx = 1.0;
+        gbc.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        panelBotones.add(txtID, gbc);
+
+        gbc.gridx = 1;
+        gbc.weightx = 0.0;
+        gbc.fill = java.awt.GridBagConstraints.NONE;
+        panelBotones.add(btnBuscar, gbc);
+
+        java.awt.Dimension tamBotonInicial = new java.awt.Dimension(160, 48);
+        javax.swing.JButton[] botones = { btnEditar, btnEliminar, btnTodos, btnTodos1 };
+        int col = 2;
+        for (javax.swing.JButton b : botones) {
+            b.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 16));
+            b.setPreferredSize(tamBotonInicial);
+            b.setBackground(new java.awt.Color(70, 130, 180));
+            b.setForeground(java.awt.Color.WHITE);
+            b.setFocusPainted(false);
+
+            gbc.gridx = col++;
+            gbc.weightx = 0.0;
+            gbc.fill = java.awt.GridBagConstraints.NONE;
+            panelBotones.add(b, gbc);
+        }
+
+        jPanel1.add(panelBotones, java.awt.BorderLayout.SOUTH);
+
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            @Override
+            public void componentResized(java.awt.event.ComponentEvent e) {
+                ajustarEscala();
+            }
+        });
+
+        jPanel1.revalidate();
+        jPanel1.repaint();
+    }
+
+    // === MÉTODO DE ESCALADO AUTOMÁTICO ===
+    private void ajustarEscala() {
+        int anchoVentana = Math.max(800, getWidth());
+        int altoVentana = Math.max(600, getHeight());
+
+        int altoBoton = Math.max(38, altoVentana / 18);
+        int anchoBoton = Math.max(120, anchoVentana / 10);
+        int anchoTxt = Math.max(240, anchoVentana / 4);
+
+        java.awt.Dimension tamBoton = new java.awt.Dimension(anchoBoton, altoBoton);
+        java.awt.Dimension tamTxt = new java.awt.Dimension(anchoTxt, altoBoton);
+
+        javax.swing.JButton[] botones = { btnBuscar, btnEditar, btnEliminar, btnTodos, btnTodos1 };
+        for (javax.swing.JButton b : botones) {
+            if (b != null) b.setPreferredSize(tamBoton);
+        }
+
+        if (txtID != null) {
+            txtID.setPreferredSize(tamTxt);
+        }
+
+        jPanel1.revalidate();
+        jPanel1.repaint();
+    }
     public void cargarUsuarios(){
         try{
             List<Usuario> usuarios = cliente.listarTodosUsuarios();
@@ -59,10 +146,13 @@ public class GestionUsuarios extends javax.swing.JFrame {
         btnTodos = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         txtID = new javax.swing.JTextField();
+        btnTodos1 = new javax.swing.JButton();
 
         jButton4.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,12 +167,15 @@ public class GestionUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblUsuarios);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 6, 398, 275));
+
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.png"))); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 6, 34, -1));
 
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +183,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
                 btnEditarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 140, 99, 36));
 
         btnTodos.setText("Todos");
         btnTodos.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +191,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
                 btnTodosActionPerformed(evt);
             }
         });
+        jPanel1.add(btnTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 188, 99, 36));
 
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -104,46 +199,16 @@ public class GestionUsuarios extends javax.swing.JFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 92, 99, 36));
+        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 15, 97, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnTodos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
+        btnTodos1.setText("Regresar");
+        btnTodos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTodos1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnTodos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 236, 99, 36));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,6 +306,13 @@ public class GestionUsuarios extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnTodosActionPerformed
 
+    private void btnTodos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodos1ActionPerformed
+        // TODO add your handling code here:
+        VeantanaGestion VG = new VeantanaGestion();
+        VG.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnTodos1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -251,6 +323,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnTodos;
+    private javax.swing.JButton btnTodos1;
     private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
