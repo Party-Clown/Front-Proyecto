@@ -10,6 +10,7 @@ import APIS.Pedido;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 /**
  *
@@ -49,6 +50,11 @@ public void setNombrePlato(String nombre) {
         }else{
             this.historial=new HistorialPedidos();
         }
+        
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null);
+        getContentPane().setLayout(new java.awt.BorderLayout());
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
     }
     
     public VentanaSemiAs(){
