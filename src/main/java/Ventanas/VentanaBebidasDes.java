@@ -9,6 +9,13 @@ import APIS.ItemsPedidos;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 
 /**
  *
@@ -46,6 +53,10 @@ private HistorialPedidos historial;
         }else{
             this.historial=new HistorialPedidos();
         }
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null);
+        getContentPane().setLayout(new java.awt.BorderLayout());
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
     }
         public VentanaBebidasDes(){
             initComponents();
