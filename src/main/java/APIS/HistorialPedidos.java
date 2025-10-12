@@ -13,13 +13,19 @@ import java.util.List;
  * @author Laura
  */
 public class HistorialPedidos {
-    private static List<List<ItemsPedidos>> historial=new ArrayList<>();
-   
-    public  void AgregarHistorial(List<ItemsPedidos> pedido){
-        historial.add(pedido);
-        System.out.println("pedido guardado");
+    private static List<Pedido> historial = new ArrayList<>();
+
+    public void AgregarHistorial(Pedido pedido) {
+        if (pedido != null) {
+            historial.add(pedido);
+            System.out.println("Pedido guardado en historial con ID: " + pedido.getId());
+        }
     }
-    public  List<List<ItemsPedidos>> getHistorial(){
+
+    public List<Pedido> getHistorial() {
         return historial;
+    }
+    public void clearHistorial(){
+        historial.clear();
     }
 }

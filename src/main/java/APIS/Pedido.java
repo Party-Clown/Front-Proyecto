@@ -15,6 +15,16 @@ public class Pedido {
     private static int contador =1;
  private int id;
  private List<ItemsPedidos> items=new ArrayList<>();
+private String CorreoUsuario;
+
+    public String getCorreoUsuario() {
+        return CorreoUsuario;
+    }
+
+    public void setCorreoUsuario(String CorreoUsuario) {
+        this.CorreoUsuario = CorreoUsuario;
+    }
+
 
  public Pedido(){
      this.id=contador++;

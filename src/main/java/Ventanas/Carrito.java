@@ -8,11 +8,12 @@ import APIS.PedidoCliente;
 import APIS.Usuario;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
+import APIS.SharedCart;
+import APIS.SesionUsuario;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -68,16 +69,24 @@ public class Carrito extends javax.swing.JFrame {
         jPanel1.revalidate();
         jPanel1.repaint();
     }
-    public void agregarItems(ItemsPedidos item){
-        if(items == null)items=new ArrayList<>();
-        items.add(item);
+    
+        public void agregarItems(ItemsPedidos item){
+         try {
+        SharedCart.getInstance().addItem(item);
         cargarCarrito();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "❌ Error al agregar item al carrito: " + e.getMessage());
+        e.printStackTrace();
     }
+        }
     public void cargarCarrito() {
         try {
-            DefaultTableModel model = new DefaultTableModel();
-            model.setColumnIdentifiers(new Object[]{"Categoría", "Nombre", "Cantidad", "Precio Unitario", "Subtotal"});
+        List<ItemsPedidos> items = SharedCart.getInstance().getItems();
 
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new Object[]{"Categoría", "Nombre", "Cantidad", "Precio Unitario", "Subtotal"});
+
+        if (items != null && !items.isEmpty()) {
             for (ItemsPedidos item : items) {
                 model.addRow(new Object[]{
                     item.getCategoria(),
@@ -87,14 +96,15 @@ public class Carrito extends javax.swing.JFrame {
                     "$" + item.getSubtotal()
                 });
             }
-
-            tblCarrito.setModel(model);
-            tblCarrito.revalidate();
-            tblCarrito.repaint();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "❌ Error al cargar carrito: " + e.getMessage());
         }
+
+        tblCarrito.setModel(model);
+        tblCarrito.revalidate();
+        tblCarrito.repaint();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "❌ Error al cargar carrito: " + e.getMessage());
+        e.printStackTrace();
+    }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -246,34 +256,49 @@ public class Carrito extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        VentanaBebidasDes vbd=new VentanaBebidasDes();
+        Vista4 vbd=new Vista4();
         vbd.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       try {
-        // 1️⃣ Crear un nuevo pedido
-        Pedido pedido = new Pedido();
-      
-        pedido.setItems(new ArrayList<>(items));
+        try {
+        List<ItemsPedidos> items = SharedCart.getInstance().getItems();
+        
+        if (items == null || items.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay productos en el carrito para pagar.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-        // 2️⃣ Enviar el pedido al backend
-        cliente.crearPedido(pedido);
-        historial.AgregarHistorial(new ArrayList<>(pedido.getItems()));
-        JOptionPane.showMessageDialog(this, "pedido guardado correctamente");
-        items.clear();
-        cargarCarrito();
-        
-        
-        
-        
-         HistorialP hisp=new HistorialP(this.historial);
-         hisp.setVisible(true);
-         this.dispose();
-    } catch (IOException e) {
-        JOptionPane.showMessageDialog(this, "⚠ Error de conexión: " + e.getMessage());
+        // Crear pedido y pasar una copia de los items
+        Pedido pedido = new Pedido();
+        pedido.setItems(new ArrayList<>(items)); // usa setItems(...) como en tu clase APIS.Pedido
+       pedido.setCorreoUsuario(SesionUsuario.getCorreo());
+        // Enviar al backend y capturar respuesta (Pedido con id)
+        Pedido pedidoCreado = cliente.crearPedido(pedido);
+
+        if (pedidoCreado != null) {
+            // Guardar en historial (pedido con su id)
+            historial.AgregarHistorial(pedidoCreado);
+
+            JOptionPane.showMessageDialog(this,
+                "✅ Pedido guardado correctamente.\nNúmero de pedido: " + pedidoCreado.getId(),
+                "Éxito",
+                JOptionPane.INFORMATION_MESSAGE);
+            HistorialP historialVentana = new HistorialP();
+            historialVentana.setVisible(true);
+            this.dispose();
+
+            // Limpiar carrito compartido y refrescar tabla
+            SharedCart.getInstance().clear();
+            cargarCarrito();
+        } else {
+            JOptionPane.showMessageDialog(this, "❌ No se pudo guardar el pedido (respuesta nula del servidor).", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "❌ Ocurrió un error al guardar el pedido: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
                                       
     }//GEN-LAST:event_jButton1ActionPerformed

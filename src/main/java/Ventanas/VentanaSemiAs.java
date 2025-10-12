@@ -7,10 +7,12 @@ package Ventanas;
 import APIS.HistorialPedidos;
 import APIS.ItemsPedidos;
 import APIS.Pedido;
+import APIS.SharedCart;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,7 +34,9 @@ public void setNombrePlato(String nombre) {
 }
     private List<ItemsPedidos> carrito;
     private HistorialPedidos historial;
-    
+    private String nombre;
+    private double precio;
+    private String categoria;
 
 /**
      * Creates new form VentanaSemiAs
@@ -57,9 +61,12 @@ public void setNombrePlato(String nombre) {
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
     }
     
-    public VentanaSemiAs(){
+    public VentanaSemiAs(String nombrePlato,double precio,String categoria){
         initComponents();
         this.carrito=new ArrayList<>();
+         this.nombre = nombre;
+         this.precio = precio;
+        this.categoria = categoria;
     }
 
     /**
@@ -188,19 +195,19 @@ public void setNombrePlato(String nombre) {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      String nombre=lblDescripcion.getText();
+       String nombre=lblDescripcion.getText();
       double precioUnitario=Double.parseDouble(lblTextoValor.getText());
       int cantidad= (int)SpinnerCantidad2.getValue();
 
         String categoria="comida";
         ItemsPedidos item=new ItemsPedidos(categoria, nombre, cantidad, precioUnitario);
         
-        if(carrito==null)carrito=new ArrayList<>();
-        carrito.add(item);
+      SharedCart.getInstance().addItem(item);
+        JOptionPane.showMessageDialog(this,"agregado al carrito");
         
         Carrito VC=new Carrito(carrito,historial);
         VC.setVisible(true);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

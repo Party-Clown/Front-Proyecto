@@ -81,12 +81,12 @@ public class VistaComida extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        chkCarneG1 = new javax.swing.JCheckBox();
-        chkpasabocas1 = new javax.swing.JCheckBox();
-        chkEnsalda1 = new javax.swing.JCheckBox();
-        chkCarnitas1 = new javax.swing.JCheckBox();
-        chkCarnes1 = new javax.swing.JCheckBox();
-        chkCarneV1 = new javax.swing.JCheckBox();
+        chkGrujiente = new javax.swing.JCheckBox();
+        chkPasabocas = new javax.swing.JCheckBox();
+        chkEnsalda = new javax.swing.JCheckBox();
+        chkSemi = new javax.swing.JCheckBox();
+        chkCarnitas = new javax.swing.JCheckBox();
+        chkCarnes = new javax.swing.JCheckBox();
         BtnAgregar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -227,28 +227,28 @@ public class VistaComida extends javax.swing.JFrame {
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/foto3.jpg"))); // NOI18N
         jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 115));
 
-        chkCarneG1.setText("Carne grujiente");
-        jPanel3.add(chkCarneG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
+        chkGrujiente.setText("Carne grujiente");
+        jPanel3.add(chkGrujiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
 
-        chkpasabocas1.setText("Pasabocas");
-        jPanel3.add(chkpasabocas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+        chkPasabocas.setText("Pasabocas");
+        jPanel3.add(chkPasabocas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
 
-        chkEnsalda1.setText("Ensalda");
-        jPanel3.add(chkEnsalda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
+        chkEnsalda.setText("Ensalda");
+        jPanel3.add(chkEnsalda, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
 
-        chkCarnitas1.setText("Semi-Asada");
-        jPanel3.add(chkCarnitas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        chkSemi.setText("Semi-Asada");
+        jPanel3.add(chkSemi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        chkCarnes1.setText("Carnitas");
-        chkCarnes1.addActionListener(new java.awt.event.ActionListener() {
+        chkCarnitas.setText("Carnitas");
+        chkCarnitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkCarnes1ActionPerformed(evt);
+                chkCarnitasActionPerformed(evt);
             }
         });
-        jPanel3.add(chkCarnes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, -1, -1));
+        jPanel3.add(chkCarnitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, -1, -1));
 
-        chkCarneV1.setText("Carne y vegetales");
-        jPanel3.add(chkCarneV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
+        chkCarnes.setText("Carne y vegetales");
+        jPanel3.add(chkCarnes, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
 
         BtnAgregar1.setBackground(new java.awt.Color(255, 204, 204));
         BtnAgregar1.setText("Agregar");
@@ -334,11 +334,103 @@ public class VistaComida extends javax.swing.JFrame {
 
     private void BtnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregar1ActionPerformed
         // TODO add your handling code here:
+         if (chkSemi.isSelected()) {
+    String nombrePlato = chkSemi.getText();
+    String rutaImagen = "src/main/resources/imagenes/semi-asada.jpeg";
+    String textoDescripcion ="Carne ligeramente asada, jugosa y con un toque ahumado.\n";
+    double precio = 30000.0;
+    String categoria ="comida" ;
+        
+    
+    VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    dispose();
+}else if(chkCarnitas.isSelected()){
+    String nombrePlato = chkCarnitas.getText();
+    String rutaImagen = "src/main/resources/imagenes/carnitas.jpeg";
+    String textoDescripcion = "Trozos de cerdo cocinados lentamente hasta quedar crujientes por fuera y suaves por dentro.";
+    double precio = 25000.0;
+     String categoria ="comida" ;
+     
+     
+
+      VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    
+}else if(chkEnsalda.isSelected()){
+    String nombrePlato = chkEnsalda.getText();
+    String rutaImagen = "src/main/resources/imagenes/ensalda.jpeg";
+    String textoDescripcion = "Una mezcla fresca de hojas verdes, aguacate y vegetales crocantes.";
+    double precio = 28000.0;
+     String categoria ="comida" ;
+   
+       VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    
+}else if(chkPasabocas.isSelected()){
+        String nombrePlato = chkPasabocas.getText();
+    String rutaImagen = "src/main/resources/imagenes/foto1.jpg";
+    String textoDescripcion = "Pequeñas delicias para picar: bocados gourmet que combinan texturas y sabores en presentaciones elegantes.";
+    double precio = 20000.0;
+     String categoria ="comida" ;
+     
+    
+
+       VentanaSemiAs ventana = new VentanaSemiAs(nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    }else if(chkCarnes.isSelected()){
+        String nombrePlato = chkCarnes.getText();
+    String rutaImagen = "src/main/resources/imagenes/Carneva.jpg";
+    String textoDescripcion = "Un plato balanceado con proteína y vegetales salteados la carne está dorada al punto justo.";
+    double precio = 25000.0;
+     String categoria ="comida" ;
+     
+     
+
+       VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    }else if(chkGrujiente.isSelected()){
+     String nombrePlato = chkGrujiente.getText();
+    String rutaImagen = "src/main/resources/imagenes/foto3.jpg";
+    String textoDescripcion = "Corte de carne con costra dorada y crujiente, sazonada con especias y decorada con hierbas.";
+    double precio = 25000.0;
+     String categoria ="comida" ;
+     
+     
+
+       VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+        
+    }
     }//GEN-LAST:event_BtnAgregar1ActionPerformed
 
-    private void chkCarnes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCarnes1ActionPerformed
+    private void chkCarnitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCarnitasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkCarnes1ActionPerformed
+    }//GEN-LAST:event_chkCarnitasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,12 +439,12 @@ public class VistaComida extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregar1;
-    private javax.swing.JCheckBox chkCarneG1;
-    private javax.swing.JCheckBox chkCarneV1;
-    private javax.swing.JCheckBox chkCarnes1;
-    private javax.swing.JCheckBox chkCarnitas1;
-    private javax.swing.JCheckBox chkEnsalda1;
-    private javax.swing.JCheckBox chkpasabocas1;
+    private javax.swing.JCheckBox chkCarnes;
+    private javax.swing.JCheckBox chkCarnitas;
+    private javax.swing.JCheckBox chkEnsalda;
+    private javax.swing.JCheckBox chkGrujiente;
+    private javax.swing.JCheckBox chkPasabocas;
+    private javax.swing.JCheckBox chkSemi;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

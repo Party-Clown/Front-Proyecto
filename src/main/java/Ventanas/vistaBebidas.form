@@ -23,10 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="623" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" pref="623" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -242,16 +239,16 @@
                               <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chkTriple1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chkTriple" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
-                                      <Component id="chkLimon1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chkLimon" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                                       <Component id="chkNaranja1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="chkJugoNatural1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chkJugoNatural" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
-                                      <Component id="chkShots1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chkShots" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="419" max="-2" attributes="0"/>
@@ -297,8 +294,8 @@
                           <Component id="chkNaranja1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="chkTriple1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chkLimon1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkTriple" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkLimon" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -307,8 +304,8 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="chkShots1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chkJugoNatural1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkShots" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkJugoNatural" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -341,12 +338,12 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkJugoNatural1">
+            <Component class="javax.swing.JCheckBox" name="chkJugoNatural">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Jugo natural"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkShots1">
+            <Component class="javax.swing.JCheckBox" name="chkShots">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Shots"/>
               </Properties>
@@ -362,17 +359,17 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkTriple1">
+            <Component class="javax.swing.JCheckBox" name="chkTriple">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Triple Shot"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkLimon1">
+            <Component class="javax.swing.JCheckBox" name="chkLimon">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limonada"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkLimon1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkLimonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="chkNaranja1">

@@ -357,7 +357,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkCarneG1">
+            <Component class="javax.swing.JCheckBox" name="chkGrujiente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Carne grujiente"/>
               </Properties>
@@ -367,7 +367,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkpasabocas1">
+            <Component class="javax.swing.JCheckBox" name="chkPasabocas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pasabocas"/>
               </Properties>
@@ -377,7 +377,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkEnsalda1">
+            <Component class="javax.swing.JCheckBox" name="chkEnsalda">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ensalda"/>
               </Properties>
@@ -387,7 +387,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkCarnitas1">
+            <Component class="javax.swing.JCheckBox" name="chkSemi">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Semi-Asada"/>
               </Properties>
@@ -397,12 +397,12 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkCarnes1">
+            <Component class="javax.swing.JCheckBox" name="chkCarnitas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Carnitas"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkCarnes1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkCarnitasActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -410,7 +410,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chkCarneV1">
+            <Component class="javax.swing.JCheckBox" name="chkCarnes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Carne y vegetales"/>
               </Properties>
