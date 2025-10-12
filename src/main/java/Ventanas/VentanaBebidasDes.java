@@ -6,6 +6,7 @@ package Ventanas;
 
 import APIS.HistorialPedidos;
 import APIS.ItemsPedidos;
+import APIS.SharedCart;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -36,8 +37,11 @@ public void setValorPlato(double precio) {
     lblTextoValor.setText(String.valueOf(precio));
     
 }
-private List<ItemsPedidos> carrito;
-private HistorialPedidos historial;
+    private List<ItemsPedidos> carrito;
+    private HistorialPedidos historial;
+    private String nombre;
+    private double precio;
+    private String categoria;
     /**
      * Creates new form VentanaBebidasDes
      */
@@ -58,9 +62,12 @@ private HistorialPedidos historial;
         getContentPane().setLayout(new java.awt.BorderLayout());
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
     }
-        public VentanaBebidasDes(){
+        public VentanaBebidasDes(String nombrePlato,double precio,String categoria){
             initComponents();
             this.carrito=new ArrayList<>();
+            this.nombre = nombre;
+            this.precio = precio;
+            this.categoria = categoria;
         }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -186,17 +193,18 @@ private HistorialPedidos historial;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-      String nombre=lblDescripcion.getText();
+       String nombre=lblDescripcion.getText();
       double precioUnitario=Double.parseDouble(lblTextoValor.getText());
       int cantidad= (int)SpinnerCantidad.getValue();
-      String categoria="Bebida";
-              
-              ItemsPedidos item=new ItemsPedidos(categoria, nombre, cantidad, precioUnitario);
-              if(carrito==null)carrito=new ArrayList<>();
-              carrito.add(item);
-       Carrito car = new Carrito(carrito,historial);
-       
-        car.setVisible(true);
+
+        String categoria="comida";
+        ItemsPedidos item=new ItemsPedidos(categoria, nombre, cantidad, precioUnitario);
+        
+      SharedCart.getInstance().addItem(item);
+        JOptionPane.showMessageDialog(this,"agregado al carrito");
+        
+        Carrito VC=new Carrito(carrito,historial);
+        VC.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

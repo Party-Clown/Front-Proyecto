@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Ventanas;
+import APIS.SesionUsuario;
 import APIS.UsuarioApiService;
 import APIS.UsuarioCliente;
 import java.io.IOException;
@@ -200,7 +201,7 @@ public class Vista3 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
        UsuarioCliente cliente = new UsuarioCliente();
-        
+       
 try {
     Map<String, Object> resultado = cliente.login(txtcorreo.getText(), txtcontrasena.getText());
 
@@ -215,7 +216,8 @@ try {
         } else {
             
             System.out.println("Login exitoso: administrador");
-            
+            String correo=SesionUsuario.getCorreo();
+            SesionUsuario.setCorreo(correo);
             new Vista4().setVisible(true);
             dispose();
         }

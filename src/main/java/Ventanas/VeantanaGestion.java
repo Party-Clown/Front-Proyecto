@@ -26,7 +26,7 @@ public class VeantanaGestion extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 0)); // ancho fijo, alto automático
+        jPanel2.setPreferredSize(new java.awt.Dimension(200, 0));
         jPanel1.add(jPanel2, java.awt.BorderLayout.WEST);
 
         javax.swing.JPanel panelCentro = new javax.swing.JPanel(new java.awt.GridBagLayout());
@@ -199,6 +199,9 @@ public class VeantanaGestion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        HistorialP historial=new HistorialP();
+        historial.setVisible(true);
+        dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -70,11 +70,11 @@ public class vistaBebidas extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        chkJugoNatural1 = new javax.swing.JCheckBox();
-        chkShots1 = new javax.swing.JCheckBox();
+        chkJugoNatural = new javax.swing.JCheckBox();
+        chkShots = new javax.swing.JCheckBox();
         jButton14 = new javax.swing.JButton();
-        chkTriple1 = new javax.swing.JCheckBox();
-        chkLimon1 = new javax.swing.JCheckBox();
+        chkTriple = new javax.swing.JCheckBox();
+        chkLimon = new javax.swing.JCheckBox();
         chkNaranja1 = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -190,9 +190,9 @@ public class vistaBebidas extends javax.swing.JFrame {
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/naranja.jpeg"))); // NOI18N
 
-        chkJugoNatural1.setText("Jugo natural");
+        chkJugoNatural.setText("Jugo natural");
 
-        chkShots1.setText("Shots");
+        chkShots.setText("Shots");
 
         jButton14.setBackground(new java.awt.Color(255, 204, 204));
         jButton14.setText("Agregar");
@@ -202,12 +202,12 @@ public class vistaBebidas extends javax.swing.JFrame {
             }
         });
 
-        chkTriple1.setText("Triple Shot");
+        chkTriple.setText("Triple Shot");
 
-        chkLimon1.setText("Limonada");
-        chkLimon1.addActionListener(new java.awt.event.ActionListener() {
+        chkLimon.setText("Limonada");
+        chkLimon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkLimon1ActionPerformed(evt);
+                chkLimonActionPerformed(evt);
             }
         });
 
@@ -229,15 +229,15 @@ public class vistaBebidas extends javax.swing.JFrame {
                         .addGap(50, 50, 50)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(chkTriple1)
+                                .addComponent(chkTriple)
                                 .addGap(169, 169, 169)
-                                .addComponent(chkLimon1)
+                                .addComponent(chkLimon)
                                 .addGap(95, 95, 95)
                                 .addComponent(chkNaranja1))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(chkJugoNatural1)
+                                .addComponent(chkJugoNatural)
                                 .addGap(181, 181, 181)
-                                .addComponent(chkShots1))
+                                .addComponent(chkShots))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(419, 419, 419)
                                 .addComponent(jLabel37))))
@@ -270,16 +270,16 @@ public class vistaBebidas extends javax.swing.JFrame {
                     .addComponent(chkNaranja1)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkTriple1)
-                            .addComponent(chkLimon1))
+                            .addComponent(chkTriple)
+                            .addComponent(chkLimon))
                         .addGap(39, 39, 39)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkShots1)
-                            .addComponent(chkJugoNatural1))))
+                            .addComponent(chkShots)
+                            .addComponent(chkJugoNatural))))
                 .addGap(43, 43, 43)
                 .addComponent(jButton14)
                 .addContainerGap(48, Short.MAX_VALUE))
@@ -312,9 +312,7 @@ public class vistaBebidas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,22 +362,83 @@ public class vistaBebidas extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
+        if (chkTriple.isSelected()) {
+    String nombrePlato = chkTriple.getText();
+    String rutaImagen = "src/main/resources/imagenes/triple-shot.jpeg";
+    String textoDescripcion ="Tres pequeños vasos con cócteles vibrantes, cada uno de distinto color.\n";
+    double precio = 20000.0;
+    String categoria="Bebidas";
+    
+    
+
+    VentanaBebidasDes ventanas = new VentanaBebidasDes(nombrePlato, precio, categoria);
+    ventanas.setNombrePlato(nombrePlato);
+    ventanas.setImagenPlato(rutaImagen);
+    ventanas.setTextoDescripcion(textoDescripcion);
+    ventanas.setValorPlato(precio);
+    ventanas.setVisible(true);
+    dispose();
+}else if(chkLimon.isSelected()){
+    String nombrePlato = chkLimon.getText();
+    String rutaImagen = "src/main/resources/imagenes/mojito.jpeg";
+    String textoDescripcion = "Refrescante y natural, servida en vaso alto con hojas de menta y rodajas de limón.";
+    double precio = 6000.0;
+    String categoria="Bebidas";
+           
+    VentanaBebidasDes ventanas = new VentanaBebidasDes(nombrePlato, precio, categoria);
+    ventanas.setNombrePlato(nombrePlato);
+    ventanas.setImagenPlato(rutaImagen);
+    ventanas.setTextoDescripcion(textoDescripcion);
+    ventanas.setValorPlato(precio);
+    ventanas.setVisible(true);
+    
+}
+else if(chkJugoNatural.isSelected()){
+        String nombrePlato = chkJugoNatural.getText();
+    String rutaImagen = "src/main/resources/imagenes/jugo.jpg";
+    String textoDescripcion = "Servido en un frasco estilo mason jar, con frutos rojos flotando.";
+    double precio = 6000.0;
+     String categoria="Bebidas";
+            
+
+    VentanaBebidasDes ventanas = new VentanaBebidasDes(nombrePlato, precio, categoria);
+    ventanas.setNombrePlato(nombrePlato);
+    ventanas.setImagenPlato(rutaImagen);
+    ventanas.setTextoDescripcion(textoDescripcion);
+    ventanas.setValorPlato(precio);
+    ventanas.setVisible(true);
+    }else if(chkShots.isSelected()){
+    String nombrePlato = chkShots.getText();
+    String rutaImagen = "src/main/resources/imagenes/bebidas.jpg";
+    String textoDescripcion = "Dos vasos cortos con cócteles rojos, decorados con frutas y servidos sobre una mesa festiva.";
+    double precio = 25000.0;
+     String categoria="Bebidas";
+            
+
+    VentanaBebidasDes ventanas = new VentanaBebidasDes(nombrePlato, precio, categoria);
+    ventanas.setNombrePlato(nombrePlato);
+    ventanas.setImagenPlato(rutaImagen);
+    ventanas.setTextoDescripcion(textoDescripcion);
+    ventanas.setValorPlato(precio);
+    ventanas.setVisible(true);
+        
+    }
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void chkLimon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkLimon1ActionPerformed
+    private void chkLimonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkLimonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_chkLimon1ActionPerformed
+    }//GEN-LAST:event_chkLimonActionPerformed
 
     /**
      * @param args the command line arguments
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox chkJugoNatural1;
-    private javax.swing.JCheckBox chkLimon1;
+    private javax.swing.JCheckBox chkJugoNatural;
+    private javax.swing.JCheckBox chkLimon;
     private javax.swing.JCheckBox chkNaranja1;
-    private javax.swing.JCheckBox chkShots1;
-    private javax.swing.JCheckBox chkTriple1;
+    private javax.swing.JCheckBox chkShots;
+    private javax.swing.JCheckBox chkTriple;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
