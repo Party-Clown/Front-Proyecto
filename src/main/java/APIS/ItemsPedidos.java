@@ -14,16 +14,18 @@ public class ItemsPedidos {
     private String nombre;
     private int cantidad;
     private double precioUnitario;
+    private String estado="En proceso";
      
     public ItemsPedidos(){
         
     }
 
-    public ItemsPedidos(String nombre, int cantidad, double precioUnitario) {
+    public ItemsPedidos(String nombre, int cantidad, double precioUnitario, String estado) {
       
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
+        this.estado=estado;
     }
    
 
@@ -32,11 +34,20 @@ public class ItemsPedidos {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
+       
     }
     
     
     public double getSubtotal(){
         return cantidad*precioUnitario;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     

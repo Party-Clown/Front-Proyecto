@@ -19,12 +19,12 @@ public class Usuario {
         
     }
 
-    public Usuario(String correoElectronico, String contrasena, String nombre, int id,String rol) {
+    public Usuario(String correoElectronico, String contrasena, String nombre, int id) {
         this.correoElectronico = correoElectronico;
         this.contrasena = contrasena;
         this.nombre = nombre;
         this.id = id;
-        this.rol=rol;
+        
     }
 
     public String getRol() {
@@ -34,10 +34,8 @@ public class Usuario {
     public void setRol(String rol) {
         this.rol = rol;
     }
-    
 
-
-   public Integer getId() { return id; }
+     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
     public String getNombre() { return nombre; }

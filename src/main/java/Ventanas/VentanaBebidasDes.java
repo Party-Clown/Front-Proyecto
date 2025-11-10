@@ -57,10 +57,7 @@ public void setValorPlato(double precio) {
         }else{
             this.historial=new HistorialPedidos();
         }
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setLocationRelativeTo(null);
-        getContentPane().setLayout(new java.awt.BorderLayout());
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        
     }
         public VentanaBebidasDes(String nombrePlato,double precio,String categoria){
             initComponents();
@@ -68,6 +65,11 @@ public void setValorPlato(double precio) {
             this.nombre = nombre;
             this.precio = precio;
             this.categoria = categoria;
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null);
+        getContentPane().setLayout(new java.awt.BorderLayout());
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        setVisible(true);
         }
     /**
      * This method is called from within the constructor to initialize the form.

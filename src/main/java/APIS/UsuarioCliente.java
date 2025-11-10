@@ -28,10 +28,10 @@ public class UsuarioCliente {
 
         this.apiService = retrofit.create(UsuarioApiService.class);
 }
-    public Map<String, Object> login(String email, String password) throws IOException {
+    public Map<String, Object> login(String correoElectronico, String contrasena) throws IOException {
         Map<String, String> credenciales = new HashMap<>();
-        credenciales.put("email", email);
-        credenciales.put("password", password);
+        credenciales.put("correoElectronico", correoElectronico);
+        credenciales.put("contrasena", contrasena);
 
         Response<Map<String, Object>> response = apiService.login(credenciales).execute();
 

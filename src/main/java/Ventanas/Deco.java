@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Ventanas;
+import APIS.HistorialPedidos;
+import APIS.ItemsPedidos;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 
 /**
@@ -10,12 +14,15 @@ import javax.swing.JFrame;
  * @author USER
  */
 public class Deco extends javax.swing.JFrame {
-
+ private Carrito carritoS;
+ private List<ItemsPedidos> carrito=new ArrayList<>();
+ private HistorialPedidos historial=new HistorialPedidos();
     /**
      * Creates new form Deco
      */
     public Deco() {
         initComponents();
+        carritoS=new Carrito(carrito,historial);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setResizable(true);
         setLocationRelativeTo(null);
@@ -80,14 +87,14 @@ public class Deco extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -95,12 +102,13 @@ public class Deco extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        chkquince = new javax.swing.JCheckBox();
+        chkbodas = new javax.swing.JCheckBox();
+        chkhalloween = new javax.swing.JCheckBox();
+        chkCumpleaños = new javax.swing.JCheckBox();
+        chkNavidad = new javax.swing.JCheckBox();
+        chkDisfraces = new javax.swing.JCheckBox();
+        btnAgregar = new javax.swing.JButton();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
 
@@ -143,9 +151,6 @@ public class Deco extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 23, -1, -1));
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Usuario");
@@ -158,7 +163,7 @@ public class Deco extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 105, 158, -1));
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, -1));
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/restaurante.png"))); // NOI18N
         jButton8.setText("Comidas");
@@ -167,7 +172,7 @@ public class Deco extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 162, 158, -1));
+        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 160, -1));
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alcohol.png"))); // NOI18N
         jButton9.setText("Bebidas");
@@ -176,15 +181,7 @@ public class Deco extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 219, 158, -1));
-
-        jButton10.setText("Decoraciones");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 270, 158, -1));
+        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 160, -1));
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/herramienta-de-puntero-para-mapas.png"))); // NOI18N
         jButton11.setText("Sitios disponibles");
@@ -193,7 +190,7 @@ public class Deco extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 311, 158, 41));
+        jPanel2.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 160, 41));
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (1).png"))); // NOI18N
         jButton12.setText("Calendario");
@@ -202,7 +199,26 @@ public class Deco extends javax.swing.JFrame {
                 jButton12ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 370, 158, -1));
+        jPanel2.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 160, -1));
+
+        jButton13.setBackground(new java.awt.Color(102, 102, 102));
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
+        jButton13.setBorder(null);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
+        jButton10.setText("Decoraciones");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 160, -1));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -218,27 +234,35 @@ public class Deco extends javax.swing.JFrame {
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boda.jpg"))); // NOI18N
 
-        jCheckBox1.setText("FIESTA DE 15 ");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        chkquince.setText("FIESTA DE 15 ");
+        chkquince.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                chkquinceActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("BODA");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        chkbodas.setText("BODA");
+        chkbodas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                chkbodasActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setText("FIESTA DE HALLOWEEN");
+        chkhalloween.setText("FIESTA DE HALLOWEEN");
 
-        jCheckBox4.setText("FIESTA DE CUMPLEAÑOS");
+        chkCumpleaños.setText("FIESTA DE CUMPLEAÑOS");
 
-        jCheckBox5.setText("FIESTA DE NAVIDAD");
+        chkNavidad.setText("FIESTA DE NAVIDAD");
 
-        jCheckBox6.setText("FIESTA DE DISFRACES");
+        chkDisfraces.setText("FIESTA DE DISFRACES");
+
+        btnAgregar.setBackground(new java.awt.Color(255, 204, 204));
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -246,29 +270,27 @@ public class Deco extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chkDisfraces))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(chkNavidad)
+                                .addGap(14, 14, 14))
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addGap(69, 69, 69)
-                                .addComponent(jLabel18))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jCheckBox6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jCheckBox5)
-                                        .addGap(14, 14, 14))
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                        .addComponent(jLabel15)
+                        .addGap(69, 69, 69)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(jCheckBox1)
+                        .addComponent(chkquince)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCheckBox2)
+                        .addComponent(chkbodas)
                         .addGap(48, 48, 48)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -278,10 +300,14 @@ public class Deco extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jCheckBox3)
+                            .addComponent(chkhalloween)
                             .addComponent(jLabel16)
-                            .addComponent(jCheckBox4))
+                            .addComponent(chkCumpleaños))
                         .addContainerGap(62, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAgregar)
+                .addGap(24, 24, 24))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,9 +327,9 @@ public class Deco extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jCheckBox4)
-                        .addComponent(jCheckBox5))
-                    .addComponent(jCheckBox6))
+                        .addComponent(chkCumpleaños)
+                        .addComponent(chkNavidad))
+                    .addComponent(chkDisfraces))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -313,9 +339,11 @@ public class Deco extends javax.swing.JFrame {
                     .addComponent(jLabel18))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3))
+                    .addComponent(chkquince)
+                    .addComponent(chkbodas)
+                    .addComponent(chkhalloween))
+                .addGap(73, 73, 73)
+                .addComponent(btnAgregar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -324,8 +352,8 @@ public class Deco extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -346,7 +374,7 @@ public class Deco extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,10 +383,6 @@ public class Deco extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -395,13 +419,122 @@ public class Deco extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton12ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void chkquinceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkquinceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_chkquinceActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void chkbodasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbodasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_chkbodasActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+      if (chkDisfraces.isSelected()) {
+    String nombrePlato = chkDisfraces.getText();
+    String rutaImagen = "src/main/resources/imagenes/baconous.jpg";
+    String textoDescripcion ="Dos personas lucen disfraces creativos, uno como huevo frito y otro como tocino. La imagen transmite humor y originalidad, ideal para una celebración divertida y sin reglas estrictas.\n";
+    double precio = 3000000.0;
+    String categoria ="Decoraciones" ;
+        
+    
+    VentanaDecoracionesDes ventana = new VentanaDecoracionesDes( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    dispose();
+      }else if(chkNavidad.isSelected()){
+          String nombrePlato = chkDisfraces.getText();
+    String rutaImagen = "src/main/resources/imagenes/navidad.jpg";
+    String textoDescripcion ="Un grupo de personas rodeadas de decoraciones navideñas, luces cálidas y comida típica. El ambiente es acogedor y familiar, perfecto para compartir en diciembre.\n";
+    double precio = 3500000.0;
+    String categoria ="Decoraciones" ;
+        
+    
+    VentanaDecoracionesDes ventana = new VentanaDecoracionesDes( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    dispose();
+      }else if(chkCumpleaños.isSelected()){
+          String nombrePlato = chkCumpleaños.getText();
+    String rutaImagen = "src/main/resources/imagenes/658.png.jpg";
+    String textoDescripcion ="Una mesa decorada con globos, serpentinas y artículos festivos. Refleja alegría y color, pensada para celebrar momentos especiales con amigos y seres queridos.\n";
+    double precio = 3500000.0;
+    String categoria ="Decoraciones" ;
+        
+    
+    VentanaDecoracionesDes ventana = new VentanaDecoracionesDes( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    dispose();
+      }else if(chkquince.isSelected()){
+          String nombrePlato = chkquince.getText();
+    String rutaImagen = "src/main/resources/imagenes/fiesta-quince-anos-medellin05-1.png";
+    String textoDescripcion ="Una joven con vestido elegante en un salón decorado con luces y detalles sofisticados. Es una imagen que evoca glamour y emoción, típica de una celebración de transición a la adultez";
+    double precio = 4000000.0;
+    String categoria ="Decoraciones" ;
+        
+    
+    VentanaDecoracionesDes ventana = new VentanaDecoracionesDes( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    dispose();
+      }else if(chkbodas.isSelected()){
+          String nombrePlato = chkbodas.getText();
+    String rutaImagen = "src/main/resources/imagenes/boda.jpg";
+    String textoDescripcion ="El ambiente suele ser elegante y emotivo: flores frescas, música suave, decoración personalizada, y un banquete que reúne a todos en torno al amor. Hay rituales como el intercambio de votos, anillos, el primer baile, y el corte del pastel, que marcan los hitos del día. ";
+    double precio = 4000000.0;
+    String categoria ="Decoraciones" ;
+        
+    
+    VentanaDecoracionesDes ventana = new VentanaDecoracionesDes( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    dispose();
+      }else if(chkhalloween.isSelected()){
+          String nombrePlato = chkhalloween.getText();
+    String rutaImagen = "src/main/resources/imagenes/boda.jpg";
+    String textoDescripcion ="personas con disfraces oscuros y luces tenues, rodeadas de decoraciones espeluznantes.el ambiente es misterioso y emocionante, perfecto para quienes disfrutan lo sobre natural.";
+    double precio = 4000000.0;
+    String categoria ="Decoraciones" ;
+        
+    
+    VentanaDecoracionesDes ventana = new VentanaDecoracionesDes( nombrePlato, precio, categoria);
+    ventana.setNombrePlato(nombrePlato);
+    ventana.setImagenPlato(rutaImagen);
+    ventana.setTextoDescripcion(textoDescripcion);
+    ventana.setValorPlato(precio);
+    ventana.setVisible(true);
+    dispose();
+      }
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        Vista3 vs=new Vista3();
+        vs.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        Deco d =new Deco();
+        d.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -409,10 +542,18 @@ public class Deco extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JCheckBox chkCumpleaños;
+    private javax.swing.JCheckBox chkDisfraces;
+    private javax.swing.JCheckBox chkNavidad;
+    private javax.swing.JCheckBox chkbodas;
+    private javax.swing.JCheckBox chkhalloween;
+    private javax.swing.JCheckBox chkquince;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -421,14 +562,7 @@ public class Deco extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

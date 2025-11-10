@@ -4,6 +4,7 @@
  */
 package Ventanas;
 import APIS.SesionUsuario;
+import APIS.Usuario;
 import APIS.UsuarioApiService;
 import APIS.UsuarioCliente;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Vista3 extends javax.swing.JFrame {
  private UsuarioApiService apiService;
+ 
     /**
      * Creates new form Vista3
      */
@@ -202,34 +204,33 @@ public class Vista3 extends javax.swing.JFrame {
         // TODO add your handling code here:
        UsuarioCliente cliente = new UsuarioCliente();
        
+       
 try {
     Map<String, Object> resultado = cliente.login(txtcorreo.getText(), txtcontrasena.getText());
 
-    if (resultado.containsKey("role")) {
-        String rol = (String) resultado.get("role");
+    if (resultado.containsKey("token")) {
+        String token = (String) resultado.get("token");
+        String rol=(String) resultado.get("rol");
+         if ("ADMIN".equalsIgnoreCase(rol)) {
+                System.out.println("Login exitoso: Administrador");
+                VeantanaGestion VG=new VeantanaGestion();
+                VG.setVisible(true);
+            } else {
+                System.out.println("Login exitoso: Cliente");
+                Vista4 vi=new Vista4();
+                vi.setVisible(true);
+            }
 
-        if ("ADMIN".equalsIgnoreCase(rol)) {
-            System.out.println("Login exitoso: Administrador");
-           
-            new VeantanaGestion().setVisible(true);
-            dispose();
+           dispose();
+
         } else {
-            
-            System.out.println("Login exitoso: administrador");
-            String correo=SesionUsuario.getCorreo();
-            SesionUsuario.setCorreo(correo);
-            new Vista4().setVisible(true);
-            dispose();
+            JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
         }
-    } else {
-        JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
-    }
 
-} catch (IOException e) {
-    JOptionPane.showMessageDialog(null, "Error al conectar con el servidor: " + e.getMessage());
-}
-        
-                                   
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al conectar con el servidor: " + e.getMessage());
+    }
+                              
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -4,6 +4,7 @@
  */
 package Ventanas;
 
+import APIS.Pedido;
 import javax.swing.JFrame;
 
 /**
@@ -11,31 +12,20 @@ import javax.swing.JFrame;
  * @author Laura
  */
 public class VeantanaGestion extends javax.swing.JFrame {
-
+private Pedido pedido;
     /**
      * Creates new form VeantanaGestion
      */
     public VeantanaGestion() {
         initComponents();
+        this.pedido=pedido;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setResizable(true);
         setLocationRelativeTo(null);
-
         getContentPane().setLayout(new java.awt.BorderLayout());
-        jPanel1.setLayout(new java.awt.BorderLayout());
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        setVisible(true);
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 0));
-        jPanel1.add(jPanel2, java.awt.BorderLayout.WEST);
-
-        javax.swing.JPanel panelCentro = new javax.swing.JPanel(new java.awt.GridBagLayout());
-        panelCentro.setOpaque(false);
-        panelCentro.add(jPanel3, new java.awt.GridBagConstraints());
-        jPanel1.add(panelCentro, java.awt.BorderLayout.CENTER);
-
-        jPanel1.revalidate();
-        jPanel1.repaint();
+       
     }
 
     /**
@@ -49,18 +39,17 @@ public class VeantanaGestion extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        BtnPedidosT = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,17 +58,9 @@ public class VeantanaGestion extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 27, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Adminitrador");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 27, -1, -1));
-
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hogar.png"))); // NOI18N
         jButton3.setText(" Home");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 109, 154, -1));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 390, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/restaurante.png"))); // NOI18N
         jButton4.setText("Comidas");
@@ -88,7 +69,7 @@ public class VeantanaGestion extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 160, 154, -1));
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 390, -1));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alcohol.png"))); // NOI18N
         jButton5.setText("Bebidas");
@@ -97,7 +78,7 @@ public class VeantanaGestion extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 217, 154, -1));
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 390, -1));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton6.setText("Decoraciones");
@@ -106,7 +87,7 @@ public class VeantanaGestion extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 274, 154, -1));
+        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 390, -1));
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (1).png"))); // NOI18N
         jButton8.setText("Calendario");
@@ -115,7 +96,7 @@ public class VeantanaGestion extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 381, 154, -1));
+        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 390, -1));
 
         jButton2.setText("Gestion De Usuarios");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -123,18 +104,19 @@ public class VeantanaGestion extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 477, 154, 36));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 390, 36));
 
-        jButton1.setText("Gestion De Pedidos ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnPedidosT.setText("Gestion Ganancias");
+        BtnPedidosT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnPedidosTActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 531, 154, 36));
+        jPanel2.add(BtnPedidosT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 570, 390, 36));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Administrador");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 443, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, -1, -1));
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/herramienta-de-puntero-para-mapas.png"))); // NOI18N
         jButton9.setText("Sitios");
@@ -143,37 +125,38 @@ public class VeantanaGestion extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 331, 154, 38));
+        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 390, 38));
 
-        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jButton7.setBackground(new java.awt.Color(102, 102, 102));
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
+        jButton7.setText("Administrador");
+        jButton7.setBorder(null);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 160, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 563, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 585, Short.MAX_VALUE)
-        );
+        jButton10.setText("Gestion De Pedidos ");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 390, 36));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -197,13 +180,13 @@ public class VeantanaGestion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnPedidosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPedidosTActionPerformed
         // TODO add your handling code here:
-        HistorialP historial=new HistorialP();
-        historial.setVisible(true);
+        VentanaPedidosTermi termi=new VentanaPedidosTermi(pedido);
+        termi.setVisible(true);
         dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtnPedidosTActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -247,25 +230,38 @@ public class VeantanaGestion extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        Vista3 vs=new Vista3();
+        vs.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        HistorialP his=new HistorialP();
+        his.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BtnPedidosT;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

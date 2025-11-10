@@ -8,9 +8,15 @@ import APIS.HistorialPedidos;
 import APIS.ItemsPedidos;
 import APIS.Pedido;
 import APIS.PedidoCliente;
+import APIS.SesionUsuario;
 import APIS.Usuario;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +28,7 @@ import javax.swing.table.DefaultTableModel;
 public class HistorialP extends javax.swing.JFrame {
  private HistorialPedidos historiales;
  private PedidoCliente cliente;
+ private ItemsPedidos pedido;
  
     /**
      * Creates new form HistorialP
@@ -32,6 +39,18 @@ public class HistorialP extends javax.swing.JFrame {
         this.cliente=new PedidoCliente();
         cargarHistorial();
         
+        
+    }
+
+    // === MÉTODO DE ESCALADO AUTOMÁTICO ===
+    
+    public HistorialP(){
+        initComponents();
+        this.cliente=new PedidoCliente();
+        this.historiales=new HistorialPedidos();
+        this.pedido=pedido;
+        cargarHistorial();
+    
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setResizable(true);
         setLocationRelativeTo(null);
@@ -67,7 +86,7 @@ public class HistorialP extends javax.swing.JFrame {
         panelBotones.add(btnBuscar, gbc);
 
         java.awt.Dimension tamBotonInicial = new java.awt.Dimension(160, 48);
-        javax.swing.JButton[] botones = { btnEditar, btnEliminar, btnTodos, btnTodos1 };
+        javax.swing.JButton[] botones = { btnEditar, btnEliminar, btnTodos, BtnTerminar,btnRegresar };
         int col = 2;
         for (javax.swing.JButton b : botones) {
             b.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 16));
@@ -93,9 +112,8 @@ public class HistorialP extends javax.swing.JFrame {
 
         jPanel1.revalidate();
         jPanel1.repaint();
+        
     }
-
-    // === MÉTODO DE ESCALADO AUTOMÁTICO ===
     private void ajustarEscala() {
         int anchoVentana = Math.max(800, getWidth());
         int altoVentana = Math.max(600, getHeight());
@@ -107,7 +125,7 @@ public class HistorialP extends javax.swing.JFrame {
         java.awt.Dimension tamBoton = new java.awt.Dimension(anchoBoton, altoBoton);
         java.awt.Dimension tamTxt = new java.awt.Dimension(anchoTxt, altoBoton);
 
-        javax.swing.JButton[] botones = { btnBuscar, btnEditar, btnEliminar, btnTodos, btnTodos1 };
+        javax.swing.JButton[] botones = { btnBuscar, btnEditar, btnEliminar, btnTodos, BtnTerminar,btnRegresar };
         for (javax.swing.JButton b : botones) {
             if (b != null) b.setPreferredSize(tamBoton);
         }
@@ -119,35 +137,33 @@ public class HistorialP extends javax.swing.JFrame {
         jPanel1.revalidate();
         jPanel1.repaint();
     }
-    public HistorialP(){
-        initComponents();
-        this.cliente=new PedidoCliente();
-        this.historiales=new HistorialPedidos();
-        
-        cargarHistorial();
-        
-    }
     
-    private void cargarHistorial(){
+    public void cargarHistorial(){
         try {
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(new Object[]{
-            "N° Pedido", "Categoría", "Nombre", "Cantidad", "Precio Unitario", "Subtotal"
+           "N° Pedido", "Categoría", "Nombre", "Cantidad", "Precio Unitario", "Subtotal","Estado"
         });
-           
+           String correoActual=SesionUsuario.getNombreUsuario();
+           List<Pedido> pedidos=cliente.listarTodosPedidos();
         // ✅ Ahora tomamos los pedidos desde la API
-        List<Pedido> pedidos = cliente.listarTodosPedidos();
+        List<Pedido> pedidosusuario = new ArrayList<>();
 
         for (Pedido pedido : pedidos) {
             int idPedido = pedido.getId();
+            
+            String nombreUsuario=pedido.getCorreoUsuario();
             for (ItemsPedidos item : pedido.getItems()) {
                 model.addRow(new Object[]{
+                    
                     idPedido,
                     item.getCategoria(),
                     item.getNombre(),
                     item.getCantidad(),
                     "$" + item.getPrecioUnitario(),
-                    "$" + item.getSubtotal()
+                    "$" + item.getSubtotal(),
+                    item.getEstado(),
+                        
                 });
             }
         }
@@ -177,9 +193,10 @@ public class HistorialP extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         txtID = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
+        BtnTerminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblHistorial = new javax.swing.JTable();
-        btnTodos1 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -211,17 +228,24 @@ public class HistorialP extends javax.swing.JFrame {
             }
         });
 
+        BtnTerminar.setText("Terminar");
+        BtnTerminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTerminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(BtnTerminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(39, 39, 39))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
@@ -237,7 +261,9 @@ public class HistorialP extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnTerminar)
+                .addGap(18, 18, 18)
                 .addComponent(btnEditar)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminar)
@@ -259,10 +285,10 @@ public class HistorialP extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblHistorial);
 
-        btnTodos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/devolver (1).png"))); // NOI18N
-        btnTodos1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/devolver (1).png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTodos1ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -272,7 +298,7 @@ public class HistorialP extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnTodos1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -288,7 +314,7 @@ public class HistorialP extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 13, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnTodos1)
+                            .addComponent(btnRegresar)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
@@ -333,7 +359,7 @@ public class HistorialP extends javax.swing.JFrame {
             // 🔹 Crear modelo con las mismas columnas del historial
             DefaultTableModel model = new DefaultTableModel();
             model.setColumnIdentifiers(new Object[]{
-                "N° Pedido", "Categoría", "Nombre", "Cantidad", "Precio Unitario", "Subtotal"
+                "N° Pedido", "Categoría", "Nombre", "Cantidad", "Precio Unitario", "Subtotal","Estado"
             });
 
             // 🔹 Si el pedido existe, agregar sus ítems
@@ -345,7 +371,8 @@ public class HistorialP extends javax.swing.JFrame {
                         item.getNombre(),
                         item.getCantidad(),
                         "$" + item.getPrecioUnitario(),
-                        "$" + item.getSubtotal()
+                        "$" + item.getSubtotal(),
+                        item.getEstado(),
                     });
                 }
             } else {
@@ -367,16 +394,51 @@ public class HistorialP extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnTodos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodos1ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-        Carrito cr=new Carrito();
-        cr.setVisible(true);
+        VeantanaGestion Vs=new VeantanaGestion();
+        Vs.setVisible(true);
         dispose();
-    }//GEN-LAST:event_btnTodos1ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void BtnTerminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTerminarActionPerformed
+        // TODO add your handling code here:
+      int fila = tblHistorial.getSelectedRow();
+    if (fila == -1) {
+        JOptionPane.showMessageDialog(this, "⚠️ Seleccione un pedido para terminar.");
+        return;
+    }
+
+    int idPedido = Integer.parseInt(tblHistorial.getValueAt(fila, 0).toString());
+
+    try {
+        // 1️⃣ Cambiamos el estado del pedido a 'Terminado' en el backend
+        cliente.actualizarEstadoPedido(idPedido, "Terminado");
+
+        // 2️⃣ Obtenemos el pedido actualizado desde el backend
+        Pedido pedidoTerminado = cliente.buscarPedidoPorId(idPedido);
+
+        // 3️⃣ Eliminamos de la tabla actual (Historial)
+        DefaultTableModel modelo = (DefaultTableModel) tblHistorial.getModel();
+        modelo.removeRow(fila);
+
+        // 4️⃣ Lo enviamos a la tabla de terminados
+        VentanaPedidosTermi ventanaTermi = new VentanaPedidosTermi(pedidoTerminado,this);
+        ventanaTermi.setVisible(true);
+        ventanaTermi.setLocationRelativeTo(null);
+
+        JOptionPane.showMessageDialog(this, "✅ Pedido terminado correctamente.");
+
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "❌ Error al actualizar el estado: " + e.getMessage());
+        e.printStackTrace();
+    }
+   
+    }//GEN-LAST:event_BtnTerminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,11 +446,12 @@ public class HistorialP extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnTerminar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnTodos;
-    private javax.swing.JButton btnTodos1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblHistorial;

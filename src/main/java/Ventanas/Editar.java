@@ -6,6 +6,7 @@ package Ventanas;
 
 import APIS.Usuario;
 import APIS.UsuarioCliente;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,6 +26,11 @@ public class Editar extends javax.swing.JFrame {
         this.lista=lista;
         this.cliente=new UsuarioCliente();
         cargarDatos();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null);
+        getContentPane().setLayout(new java.awt.BorderLayout());
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        setVisible(true);
     }
         private void cargarDatos() {
         txtid.setText(String.valueOf(usuario.getId()));
@@ -157,7 +163,7 @@ public class Editar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         // TODO add your handling code here:
-         try {
+           try {
             usuario.setCorreoElectronico(txtcorreoElectronico.getText());
             usuario.setCorreoElectronico(txtcontrasena.getText());
             usuario.setNombre(txtnombre.getText());

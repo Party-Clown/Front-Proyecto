@@ -10,6 +10,16 @@ package APIS;
  */
 public class SesionUsuario {
     private static String correoUsuario;
+    private static String NombreUsuario;
+
+    public static String getNombreUsuario() {
+        return NombreUsuario;
+    }
+
+    public static void setNombreUsuario(String NombreUsuario) {
+        SesionUsuario.NombreUsuario = NombreUsuario;
+    }
+    
 
     
     public static void setCorreo(String correo) {
