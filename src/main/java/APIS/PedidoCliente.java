@@ -64,5 +64,17 @@ public class PedidoCliente {
                 throw new IOException("error al eliminar pedido"+ response.code());
              }
          }
+    public void actualizarEstadoPedido(int id, String nuevoEstado) throws IOException {
+    Response<Void> response = apiService.actualizarEstadoPedido(id, nuevoEstado).execute();
+    if (!response.isSuccessful()) {
+        throw new IOException("Error al actualizar estado del pedido: " + response.code());
+    }
     
+}
+    public void terminarPedido(int id) throws IOException {
+    Response<Void> response = apiService.terminarPedido(id).execute();
+    if (!response.isSuccessful()) {
+        throw new IOException("Error al marcar pedido como terminado: " + response.code());
+    }
+    }
 }

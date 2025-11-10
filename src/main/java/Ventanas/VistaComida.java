@@ -118,6 +118,7 @@ public class VistaComida extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuadro.png"))); // NOI18N
         jButton5.setText("Decoraciones");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +142,9 @@ public class VistaComida extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(102, 102, 102));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
+        jButton4.setBorder(null);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -348,7 +351,7 @@ public class VistaComida extends javax.swing.JFrame {
     ventana.setTextoDescripcion(textoDescripcion);
     ventana.setValorPlato(precio);
     ventana.setVisible(true);
-    dispose();
+   dispose();
 }else if(chkCarnitas.isSelected()){
     String nombrePlato = chkCarnitas.getText();
     String rutaImagen = "src/main/resources/imagenes/carnitas.jpeg";
@@ -364,7 +367,7 @@ public class VistaComida extends javax.swing.JFrame {
     ventana.setTextoDescripcion(textoDescripcion);
     ventana.setValorPlato(precio);
     ventana.setVisible(true);
-    
+    dispose();
 }else if(chkEnsalda.isSelected()){
     String nombrePlato = chkEnsalda.getText();
     String rutaImagen = "src/main/resources/imagenes/ensalda.jpeg";
@@ -378,7 +381,7 @@ public class VistaComida extends javax.swing.JFrame {
     ventana.setTextoDescripcion(textoDescripcion);
     ventana.setValorPlato(precio);
     ventana.setVisible(true);
-    
+    dispose();
 }else if(chkPasabocas.isSelected()){
         String nombrePlato = chkPasabocas.getText();
     String rutaImagen = "src/main/resources/imagenes/foto1.jpg";
@@ -394,6 +397,7 @@ public class VistaComida extends javax.swing.JFrame {
     ventana.setTextoDescripcion(textoDescripcion);
     ventana.setValorPlato(precio);
     ventana.setVisible(true);
+    dispose();
     }else if(chkCarnes.isSelected()){
         String nombrePlato = chkCarnes.getText();
     String rutaImagen = "src/main/resources/imagenes/Carneva.jpg";
@@ -409,6 +413,7 @@ public class VistaComida extends javax.swing.JFrame {
     ventana.setTextoDescripcion(textoDescripcion);
     ventana.setValorPlato(precio);
     ventana.setVisible(true);
+    dispose();
     }else if(chkGrujiente.isSelected()){
      String nombrePlato = chkGrujiente.getText();
     String rutaImagen = "src/main/resources/imagenes/foto3.jpg";
@@ -424,6 +429,7 @@ public class VistaComida extends javax.swing.JFrame {
     ventana.setTextoDescripcion(textoDescripcion);
     ventana.setValorPlato(precio);
     ventana.setVisible(true);
+    dispose();
         
     }
     }//GEN-LAST:event_BtnAgregar1ActionPerformed

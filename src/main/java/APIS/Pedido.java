@@ -12,10 +12,27 @@ import java.util.List;
  * @author Laura
  */
 public class Pedido {
-    private static int contador =1;
+  
  private int id;
  private List<ItemsPedidos> items=new ArrayList<>();
 private String CorreoUsuario;
+private String NombreUsuario;
+private String Estado;
+
+    public Pedido() {
+        this.id = id;
+        this.CorreoUsuario = CorreoUsuario;
+        this.NombreUsuario = NombreUsuario;
+        this.Estado=Estado;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
 
     public String getCorreoUsuario() {
         return CorreoUsuario;
@@ -25,10 +42,15 @@ private String CorreoUsuario;
         this.CorreoUsuario = CorreoUsuario;
     }
 
+    public String getNombreUsuario() {
+        return NombreUsuario;
+    }
 
- public Pedido(){
-     this.id=contador++;
- }
+    public void setNombreUsuario(String NombreUsuario) {
+        this.NombreUsuario = NombreUsuario;
+    }
+
+ 
 
   
     public int getId() {

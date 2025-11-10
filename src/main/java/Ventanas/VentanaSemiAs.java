@@ -55,10 +55,7 @@ public void setNombrePlato(String nombre) {
             this.historial=new HistorialPedidos();
         }
         
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setLocationRelativeTo(null);
-        getContentPane().setLayout(new java.awt.BorderLayout());
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+       ;
     }
     
     public VentanaSemiAs(String nombrePlato,double precio,String categoria){
@@ -67,6 +64,11 @@ public void setNombrePlato(String nombre) {
          this.nombre = nombre;
          this.precio = precio;
         this.categoria = categoria;
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null);
+        getContentPane().setLayout(new java.awt.BorderLayout());
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        setVisible(true);
     }
 
     /**

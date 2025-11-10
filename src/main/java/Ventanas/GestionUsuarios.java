@@ -4,6 +4,7 @@
  */
 package Ventanas;
 
+import APIS.Pedido;
 import APIS.Usuario;
 import APIS.UsuarioCliente;
 import java.io.IOException;
@@ -18,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
     public class GestionUsuarios extends javax.swing.JFrame {
          private UsuarioCliente cliente;
+         
         /**
          * Creates new form GestionUsuarios
          */
@@ -167,7 +169,7 @@ import javax.swing.table.DefaultTableModel;
         ));
         jScrollPane1.setViewportView(tblUsuarios);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 6, 398, 275));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 398, 275));
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.png"))); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +204,7 @@ import javax.swing.table.DefaultTableModel;
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 92, 99, 36));
         jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 15, 97, -1));
 
-        btnTodos1.setText("Regresar");
+        btnTodos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/devolver (1).png"))); // NOI18N
         btnTodos1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTodos1ActionPerformed(evt);
@@ -276,7 +278,7 @@ import javax.swing.table.DefaultTableModel;
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
         
-         int fila = tblUsuarios.getSelectedRow();
+          int fila = tblUsuarios.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(this,"fila no seleccionada");
         }
@@ -287,8 +289,8 @@ import javax.swing.table.DefaultTableModel;
         String contrasena=(String) tblUsuarios.getValueAt(fila, 3);
         String nombre=(String) tblUsuarios.getValueAt(fila, 1);
         int id = (int) tblUsuarios.getValueAt(fila, 0);
-        String rol=(String) tblUsuarios.getValueAt(fila,4);
-        Usuario usuario=new Usuario(correoElectronico, contrasena, nombre, id, rol);
+        
+        Usuario usuario=new Usuario(correoElectronico, contrasena, nombre, id);
        
 
   
