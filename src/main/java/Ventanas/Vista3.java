@@ -213,13 +213,15 @@ try {
         String rol=(String) resultado.get("rol");
          if ("ADMIN".equalsIgnoreCase(rol)) {
                 System.out.println("Login exitoso: Administrador");
-                new VeantanaGestion().setVisible(true);
+                VeantanaGestion VG=new VeantanaGestion();
+                VG.setVisible(true);
             } else {
                 System.out.println("Login exitoso: Cliente");
-                new Vista4().setVisible(true);
+                Vista4 vi=new Vista4();
+                vi.setVisible(true);
             }
 
-            dispose();
+           dispose();
 
         } else {
             JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
@@ -228,9 +230,7 @@ try {
     } catch (IOException e) {
         JOptionPane.showMessageDialog(null, "Error al conectar con el servidor: " + e.getMessage());
     }
-
-   
-                                   
+                              
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
