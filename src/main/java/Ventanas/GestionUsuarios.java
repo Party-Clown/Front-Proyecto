@@ -152,8 +152,10 @@ import javax.swing.table.DefaultTableModel;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblUsuarios.setBackground(new java.awt.Color(204, 204, 255));
         tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -169,6 +171,7 @@ import javax.swing.table.DefaultTableModel;
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 6, 398, 275));
 
+        btnBuscar.setBackground(new java.awt.Color(204, 204, 255));
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.png"))); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,38 +180,44 @@ import javax.swing.table.DefaultTableModel;
         });
         jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 6, 34, -1));
 
+        btnEditar.setBackground(new java.awt.Color(204, 204, 255));
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 140, 99, 36));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 99, 36));
 
+        btnTodos.setBackground(new java.awt.Color(204, 204, 255));
         btnTodos.setText("Todos");
         btnTodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTodosActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 188, 99, 36));
+        jPanel1.add(btnTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 99, 36));
 
+        btnEliminar.setBackground(new java.awt.Color(204, 204, 255));
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 92, 99, 36));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 99, 36));
+
+        txtID.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 15, 97, -1));
 
+        btnTodos1.setBackground(new java.awt.Color(204, 204, 255));
         btnTodos1.setText("Regresar");
         btnTodos1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTodos1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTodos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 236, 99, 36));
+        jPanel1.add(btnTodos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 99, 36));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author qospi
+ * @author USUARIO
  */
 public class VistaComida extends javax.swing.JFrame {
  private Carrito carritoS;
@@ -34,18 +34,14 @@ public class VistaComida extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 0));
-        jPanel1.add(jPanel2, java.awt.BorderLayout.WEST);
-
         javax.swing.JPanel panelCentro = new javax.swing.JPanel(new java.awt.GridBagLayout());
         panelCentro.setOpaque(false);
-        panelCentro.add(jPanel3, new java.awt.GridBagConstraints());
+        panelCentro.add(jPanel4, new java.awt.GridBagConstraints());
         jPanel1.add(panelCentro, java.awt.BorderLayout.CENTER);
 
         jPanel1.revalidate();
         jPanel1.repaint();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,25 +52,7 @@ public class VistaComida extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -88,17 +66,160 @@ public class VistaComida extends javax.swing.JFrame {
         chkCarnitas = new javax.swing.JCheckBox();
         chkCarnes = new javax.swing.JCheckBox();
         BtnAgregar1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 242));
 
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setBackground(new java.awt.Color(102, 102, 255));
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/semi-asada.jpeg"))); // NOI18N
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/carnitas.jpeg"))); // NOI18N
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ensalda.jpeg"))); // NOI18N
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/foto1.jpg"))); // NOI18N
+        jLabel31.setText("ensalda");
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/R (2).jpg"))); // NOI18N
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/foto3.jpg"))); // NOI18N
+
+        chkGrujiente.setText("Carne grujiente");
+
+        chkPasabocas.setText("Pasabocas");
+        chkPasabocas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPasabocasActionPerformed(evt);
+            }
+        });
+
+        chkEnsalda.setText("Ensalda");
+
+        chkSemi.setText("Semi-Asada");
+
+        chkCarnitas.setText("Carnitas");
+        chkCarnitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkCarnitasActionPerformed(evt);
+            }
+        });
+
+        chkCarnes.setText("Carne y vegetales");
+
+        BtnAgregar1.setBackground(new java.awt.Color(51, 51, 255));
+        BtnAgregar1.setForeground(new java.awt.Color(255, 255, 255));
+        BtnAgregar1.setText("Agregar");
+        BtnAgregar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAgregar1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(chkGrujiente))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtnAgregar1))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chkPasabocas)
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chkCarnes))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chkSemi)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chkCarnitas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chkEnsalda)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel30)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(chkCarnitas)))
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(chkSemi)
+                                .addGap(66, 66, 66))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(chkEnsalda)
+                                .addGap(67, 67, 67)))))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(chkPasabocas))
+                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(chkCarnes)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chkGrujiente)
+                        .addGap(73, 73, 73))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BtnAgregar1)
+                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(43, Short.MAX_VALUE))))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Usuario");
 
+        jButton1.setBackground(new java.awt.Color(51, 102, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hogar.png"))); // NOI18N
         jButton1.setText(" Home");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -107,17 +228,29 @@ public class VistaComida extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(51, 102, 255));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/restaurante.png"))); // NOI18N
         jButton2.setText("Comidas");
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alcohol.png"))); // NOI18N
-        jButton3.setText("Bebidas");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(51, 102, 255));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alcohol.png"))); // NOI18N
+        jButton4.setText("Bebidas");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setBackground(new java.awt.Color(51, 102, 255));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cuadricula (1).png"))); // NOI18N
         jButton5.setText("Decoraciones");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,6 +258,8 @@ public class VistaComida extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setBackground(new java.awt.Color(51, 102, 255));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/herramienta-de-puntero-para-mapas.png"))); // NOI18N
         jButton6.setText("Sitios disponibles");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -133,18 +268,13 @@ public class VistaComida extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (1).png"))); // NOI18N
-        jButton7.setText("Calendario");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        jButton8.setBackground(new java.awt.Color(51, 102, 255));
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (1).png"))); // NOI18N
+        jButton8.setText("Calendario");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButton8ActionPerformed(evt);
             }
         });
 
@@ -152,290 +282,212 @@ public class VistaComida extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(15, 15, 15))))
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel3))
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jButton4)))
-                .addGap(29, 29, 29)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jButton5)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jButton8)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
-
-        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 466, -1, -1));
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(698, 466, -1, -1));
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 509, -1, -1));
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 509, -1, -1));
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 506, -1, -1));
-        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(716, 466, -1, -1));
-        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 555, -1, -1));
-        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 555, -1, -1));
-        jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 555, -1, -1));
-
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/semi-asada.jpeg"))); // NOI18N
-        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 130, -1));
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/carnitas.jpeg"))); // NOI18N
-        jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
-
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ensalda.jpeg"))); // NOI18N
-        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
-
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/foto1.jpg"))); // NOI18N
-        jLabel31.setText("ensalda");
-        jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 292, 122));
-
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/R (2).jpg"))); // NOI18N
-        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, -1, 122));
-
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/foto3.jpg"))); // NOI18N
-        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 115));
-
-        chkGrujiente.setText("Carne grujiente");
-        jPanel3.add(chkGrujiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
-
-        chkPasabocas.setText("Pasabocas");
-        jPanel3.add(chkPasabocas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
-
-        chkEnsalda.setText("Ensalda");
-        jPanel3.add(chkEnsalda, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
-
-        chkSemi.setText("Semi-Asada");
-        jPanel3.add(chkSemi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
-
-        chkCarnitas.setText("Carnitas");
-        chkCarnitas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkCarnitasActionPerformed(evt);
-            }
-        });
-        jPanel3.add(chkCarnitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, -1, -1));
-
-        chkCarnes.setText("Carne y vegetales");
-        jPanel3.add(chkCarnes, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
-
-        BtnAgregar1.setBackground(new java.awt.Color(255, 204, 204));
-        BtnAgregar1.setText("Agregar");
-        BtnAgregar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAgregar1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(BtnAgregar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void chkPasabocasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPasabocasActionPerformed
         // TODO add your handling code here:
-        Deco d =new Deco();
-        d.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Vista4 vs=new Vista4();
-        vs.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        vistaBebidas vb=new vistaBebidas();
-        vb.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        VistaSitios vs=new VistaSitios();
-        vs.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        calendario c=new calendario();
-        c.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        Vista3 vs=new Vista3();
-        vs.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_chkPasabocasActionPerformed
 
     private void BtnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregar1ActionPerformed
         // TODO add your handling code here:
-         if (chkSemi.isSelected()) {
-    String nombrePlato = chkSemi.getText();
-    String rutaImagen = "src/main/resources/imagenes/semi-asada.jpeg";
-    String textoDescripcion ="Carne ligeramente asada, jugosa y con un toque ahumado.\n";
-    double precio = 30000.0;
-    String categoria ="comida" ;
-        
-    
-    VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
-    ventana.setNombrePlato(nombrePlato);
-    ventana.setImagenPlato(rutaImagen);
-    ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(precio);
-    ventana.setVisible(true);
-    dispose();
-}else if(chkCarnitas.isSelected()){
-    String nombrePlato = chkCarnitas.getText();
-    String rutaImagen = "src/main/resources/imagenes/carnitas.jpeg";
-    String textoDescripcion = "Trozos de cerdo cocinados lentamente hasta quedar crujientes por fuera y suaves por dentro.";
-    double precio = 25000.0;
-     String categoria ="comida" ;
-     
-     
+        if (chkSemi.isSelected()) {
+            String nombrePlato = chkSemi.getText();
+            String rutaImagen = "src/main/resources/imagenes/semi-asada.jpeg";
+            String textoDescripcion ="Carne ligeramente asada, jugosa y con un toque ahumado.\n";
+            double precio = 30000.0;
+            String categoria ="comida" ;
 
-      VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
-    ventana.setNombrePlato(nombrePlato);
-    ventana.setImagenPlato(rutaImagen);
-    ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(precio);
-    ventana.setVisible(true);
-    
-}else if(chkEnsalda.isSelected()){
-    String nombrePlato = chkEnsalda.getText();
-    String rutaImagen = "src/main/resources/imagenes/ensalda.jpeg";
-    String textoDescripcion = "Una mezcla fresca de hojas verdes, aguacate y vegetales crocantes.";
-    double precio = 28000.0;
-     String categoria ="comida" ;
-   
-       VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
-    ventana.setNombrePlato(nombrePlato);
-    ventana.setImagenPlato(rutaImagen);
-    ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(precio);
-    ventana.setVisible(true);
-    
-}else if(chkPasabocas.isSelected()){
-        String nombrePlato = chkPasabocas.getText();
-    String rutaImagen = "src/main/resources/imagenes/foto1.jpg";
-    String textoDescripcion = "Pequeñas delicias para picar: bocados gourmet que combinan texturas y sabores en presentaciones elegantes.";
-    double precio = 20000.0;
-     String categoria ="comida" ;
-     
-    
+            VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+            ventana.setNombrePlato(nombrePlato);
+            ventana.setImagenPlato(rutaImagen);
+            ventana.setTextoDescripcion(textoDescripcion);
+            ventana.setValorPlato(precio);
+            ventana.setVisible(true);
+            dispose();
+        }else if(chkCarnitas.isSelected()){
+            String nombrePlato = chkCarnitas.getText();
+            String rutaImagen = "src/main/resources/imagenes/carnitas.jpeg";
+            String textoDescripcion = "Trozos de cerdo cocinados lentamente hasta quedar crujientes por fuera y suaves por dentro.";
+            double precio = 25000.0;
+            String categoria ="comida" ;
 
-       VentanaSemiAs ventana = new VentanaSemiAs(nombrePlato, precio, categoria);
-    ventana.setNombrePlato(nombrePlato);
-    ventana.setImagenPlato(rutaImagen);
-    ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(precio);
-    ventana.setVisible(true);
-    }else if(chkCarnes.isSelected()){
-        String nombrePlato = chkCarnes.getText();
-    String rutaImagen = "src/main/resources/imagenes/Carneva.jpg";
-    String textoDescripcion = "Un plato balanceado con proteína y vegetales salteados la carne está dorada al punto justo.";
-    double precio = 25000.0;
-     String categoria ="comida" ;
-     
-     
+            VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+            ventana.setNombrePlato(nombrePlato);
+            ventana.setImagenPlato(rutaImagen);
+            ventana.setTextoDescripcion(textoDescripcion);
+            ventana.setValorPlato(precio);
+            ventana.setVisible(true);
 
-       VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
-    ventana.setNombrePlato(nombrePlato);
-    ventana.setImagenPlato(rutaImagen);
-    ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(precio);
-    ventana.setVisible(true);
-    }else if(chkGrujiente.isSelected()){
-     String nombrePlato = chkGrujiente.getText();
-    String rutaImagen = "src/main/resources/imagenes/foto3.jpg";
-    String textoDescripcion = "Corte de carne con costra dorada y crujiente, sazonada con especias y decorada con hierbas.";
-    double precio = 25000.0;
-     String categoria ="comida" ;
-     
-     
+        }else if(chkEnsalda.isSelected()){
+            String nombrePlato = chkEnsalda.getText();
+            String rutaImagen = "src/main/resources/imagenes/ensalda.jpeg";
+            String textoDescripcion = "Una mezcla fresca de hojas verdes, aguacate y vegetales crocantes.";
+            double precio = 28000.0;
+            String categoria ="comida" ;
 
-       VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
-    ventana.setNombrePlato(nombrePlato);
-    ventana.setImagenPlato(rutaImagen);
-    ventana.setTextoDescripcion(textoDescripcion);
-    ventana.setValorPlato(precio);
-    ventana.setVisible(true);
-        
-    }
+            VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+            ventana.setNombrePlato(nombrePlato);
+            ventana.setImagenPlato(rutaImagen);
+            ventana.setTextoDescripcion(textoDescripcion);
+            ventana.setValorPlato(precio);
+            ventana.setVisible(true);
+
+        }else if(chkPasabocas.isSelected()){
+            String nombrePlato = chkPasabocas.getText();
+            String rutaImagen = "src/main/resources/imagenes/foto1.jpg";
+            String textoDescripcion = "Pequeñas delicias para picar: bocados gourmet que combinan texturas y sabores en presentaciones elegantes.";
+            double precio = 20000.0;
+            String categoria ="comida" ;
+
+            VentanaSemiAs ventana = new VentanaSemiAs(nombrePlato, precio, categoria);
+            ventana.setNombrePlato(nombrePlato);
+            ventana.setImagenPlato(rutaImagen);
+            ventana.setTextoDescripcion(textoDescripcion);
+            ventana.setValorPlato(precio);
+            ventana.setVisible(true);
+        }else if(chkCarnes.isSelected()){
+            String nombrePlato = chkCarnes.getText();
+            String rutaImagen = "src/main/resources/imagenes/Carneva.jpg";
+            String textoDescripcion = "Un plato balanceado con proteína y vegetales salteados la carne está dorada al punto justo.";
+            double precio = 25000.0;
+            String categoria ="comida" ;
+
+            VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+            ventana.setNombrePlato(nombrePlato);
+            ventana.setImagenPlato(rutaImagen);
+            ventana.setTextoDescripcion(textoDescripcion);
+            ventana.setValorPlato(precio);
+            ventana.setVisible(true);
+        }else if(chkGrujiente.isSelected()){
+            String nombrePlato = chkGrujiente.getText();
+            String rutaImagen = "src/main/resources/imagenes/foto3.jpg";
+            String textoDescripcion = "Corte de carne con costra dorada y crujiente, sazonada con especias y decorada con hierbas.";
+            double precio = 25000.0;
+            String categoria ="comida" ;
+
+            VentanaSemiAs ventana = new VentanaSemiAs( nombrePlato, precio, categoria);
+            ventana.setNombrePlato(nombrePlato);
+            ventana.setImagenPlato(rutaImagen);
+            ventana.setTextoDescripcion(textoDescripcion);
+            ventana.setValorPlato(precio);
+            ventana.setVisible(true);
+
+        }
     }//GEN-LAST:event_BtnAgregar1ActionPerformed
 
     private void chkCarnitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCarnitasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkCarnitasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        VistaComida vc=new VistaComida();
+        vc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        vistaBebidas vB=new vistaBebidas();
+        vB.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Deco d=new Deco();
+        d.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        VistaSitios Vs=new VistaSitios();
+        Vs.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        calendario Cl=new calendario();
+        Cl.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAgregar1;
@@ -447,20 +499,11 @@ public class VistaComida extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkSemi;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel27;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -470,6 +513,6 @@ public class VistaComida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }
